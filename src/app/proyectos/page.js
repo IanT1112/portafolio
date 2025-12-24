@@ -70,14 +70,6 @@ export default function Proyectos() {
                 Ver proyecto →
               </span>
           </a>   
-
-          {/* PROYECTO 4 */} 
-        <div className="border p-4">
-          <h2 className="font-semibold">Proyecto 4</h2>
-          <p className="text-sm">
-            Breve descripción del proyecto.
-          </p>
-        </div>
       </section>
     </main>
   );

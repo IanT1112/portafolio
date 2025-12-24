@@ -42,6 +42,18 @@ export default function Home() {
           </div>
         </div>
 
+                {/* BOTÓN */}
+        <div className="text-center mt-12">
+          <a
+            href="/proyectos/iantapia.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 px-6 py-3 rounded-xl bg-black text-white font-semibold hover:opacity-90 transition"
+          >
+            Ver CV
+          </a>
+        </div>
+
         {/* FOOTER HERO */}
         <div className="w-full flex justify-between items-end text-sm px-2 md:px-12">
           <div>
@@ -49,8 +61,9 @@ export default function Home() {
             <p>Universitario</p>
           </div>
 
-          <div className="hidden md:block text-2xl">↓</div>
-
+          <div className="flex justify-center w-full mt-6 md:mt-10 text-xl md:text-2xl animate-bounce">
+            ↓
+          </div>
           <div className="text-right font-bold text-lg">
             <p>Ingeniería</p>
             <p>Sistemas e IA</p>

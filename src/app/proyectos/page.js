@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 export default function Proyectos() {
   return (
     <main className="min-h-screen bg-[#cfe6b8] px-12 py-20 text-black">
@@ -56,12 +57,21 @@ export default function Proyectos() {
               Ver proyecto →
             </span>
           </a>
-        <div className="border p-4">
-          <h2 className="font-semibold">Agente IA</h2>
+          {/* PROYECTO 3 */}
+          <a
+            href="/proyectos/dashboard"
+            className="border p-6 hover:bg-black hover:text-white transition flex flex-col justify-between"
+          >
+          <h2 className="font-semibold">Dashboard Historial Crediticio</h2>
           <p className="text-sm">
-            Breve descripción del proyecto.
+            Dashboard financiero desarrollado en Power BI para analizar el riesgo crediticio, la exposición del capital y la tasa de incumplimiento mediante segmentación interactiva y métricas clave.
           </p>
-        </div>
+          <span className="mt-4 text-sm font-semibold underline underline-offset-4">
+                Ver proyecto →
+              </span>
+          </a>   
+
+          {/* PROYECTO 4 */} 
         <div className="border p-4">
           <h2 className="font-semibold">Proyecto 4</h2>
           <p className="text-sm">

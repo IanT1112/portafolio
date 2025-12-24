@@ -146,9 +146,9 @@ export default function Home() {
 
           {/* PROYECTO 3 */}
           <div className="border border-black p-6 flex flex-col justify-between">
-            <h3 className="text-lg font-bold mb-4">Proyecto 3</h3>
+            <h3 className="text-lg font-bold mb-4">Dashboard Historial Crediticio</h3>
             <p className="text-sm">
-              Breve descripción del proyecto.
+              Dashboard financiero desarrollado en Power BI para analizar el riesgo crediticio, la exposición del capital y la tasa de incumplimiento mediante segmentación interactiva y métricas clave.
             </p>
           </div>
 

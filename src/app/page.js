@@ -1,4 +1,6 @@
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaAws, FaCloud, FaFigma } from "react-icons/fa";
+import { SiGooglecloud, SiTensorflow } from "react-icons/si";
 import Image from "next/image";
 
 export default function Home() {
@@ -25,7 +27,7 @@ export default function Home() {
           <div className="flex gap-6 text-2xl justify-center">
             <a href="https://github.com/IanT1112" target="_blank"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank"><FaLinkedin /></a>
-            <a href="https://www.instagram.com/iaann.04/" target="_blank"><FaInstagram /></a>
+
           </div>
         </div>
 

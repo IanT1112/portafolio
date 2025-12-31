@@ -1,23 +1,67 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaAws, FaCloud, FaFigma } from "react-icons/fa";
-import { SiGooglecloud, SiTensorflow } from "react-icons/si";
+"use client";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+// Hook personalizado para detectar cuando un elemento es visible
+function useScrollReveal() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.1, // cuando el 10% del elemento es visible
+        rootMargin: "0px 0px -50px 0px"
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return [ref, isVisible];
+}
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#cfe6b8] text-black">
+  const [heroRef, heroVisible] = useScrollReveal();
+  const [sobreMiRef, sobreMiVisible] = useScrollReveal();
+  const [proyectosRef, proyectosVisible] = useScrollReveal();
 
+  return (
+    <main 
+      className="min-h-screen text-black" 
+      style={{
+        background: 'linear-gradient(135deg, #ffffff 0%, #E3EED4 30%, #AEC3B0 60%, #6B9071 100%)'
+      }}
+    >
       {/* NAVBAR */}
       <nav className="flex justify-center items-center px-6 md:px-12 py-6 text-sm uppercase tracking-wide">
-        <div className="flex gap-10 md:gap-20">
-          <a href="#sobre-mi">sobre mí</a>
-          <a href="#proyectos">proyectos</a>
+        <div className="flex gap-10 md:gap-20 font-bold">
+          <a href="#sobre-mi" className="hover:underline">sobre mí</a>
+          <a href="#proyectos" className="hover:underline">proyectos</a>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="flex flex-col items-center justify-between px-6 py-12 min-h-[calc(100vh-80px)]">
-
+      <section 
+        ref={heroRef}
+        className={`relative h-[calc(100vh-96px)] overflow-hidden transition-all duration-1000 ${
+          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         {/* NOMBRE + REDES */}
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-black tracking-widest mb-3">
@@ -25,9 +69,12 @@ export default function Home() {
           </h1>
 
           <div className="flex gap-6 text-2xl justify-center">
-            <a href="https://github.com/IanT1112" target="_blank"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank"><FaLinkedin /></a>
-
+            <a href="https://github.com/IanT1112" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
           </div>
         </div>
 
@@ -44,10 +91,10 @@ export default function Home() {
           </div>
         </div>
 
-                {/* BOTÓN */}
+        {/* BOTÓN */}
         <div className="text-center mt-12">
           <a
-            href="/proyectos/iantapia.pdf"
+            href="/proyectos/iantapia-cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-6 px-6 py-3 rounded-xl bg-black text-white font-semibold hover:opacity-90 transition"
@@ -74,10 +121,14 @@ export default function Home() {
 
       </section>
 
+
       {/* SOBRE MÍ */}
       <section
         id="sobre-mi"
-        className="px-6 md:px-16 py-16 md:py-24"
+        ref={sobreMiRef}
+        className={`px-6 md:px-16 py-16 md:py-24 transition-all duration-1000 delay-200 ${
+          sobreMiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
@@ -127,7 +178,10 @@ export default function Home() {
       {/* PROYECTOS */}
       <section
         id="proyectos"
-        className="px-6 md:px-16 py-16 md:py-24"
+        ref={proyectosRef}
+        className={`px-6 md:px-16 py-16 md:py-24 transition-all duration-1000 delay-300 ${
+          proyectosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+        }`}
       >
         <h2 className="text-3xl md:text-4xl font-black text-center">
           Proyectos
@@ -140,7 +194,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {/* PROYECTO 1 */}
-          <div className="border border-black p-6 flex flex-col justify-between">
+          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
             <h3 className="text-lg font-bold mb-4">
               Sistema de IA para detección temprana de ACV
             </h3>
@@ -151,7 +205,7 @@ export default function Home() {
           </div>
 
           {/* PROYECTO 2 */}
-          <div className="border border-black p-6 flex flex-col justify-between">
+          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
             <h3 className="text-lg font-bold mb-4">Trujillo Responde</h3>
             <p className="text-sm leading-relaxed">
               Plataforma ciudadana para el reporte de incidencias urbanas, con geolocalización
@@ -160,7 +214,7 @@ export default function Home() {
           </div>
 
           {/* PROYECTO 3 */}
-          <div className="border border-black p-6 flex flex-col justify-between">
+          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
             <h3 className="text-lg font-bold mb-4">Dashboard Historial Crediticio</h3>
             <p className="text-sm">
               Dashboard financiero desarrollado en Power BI para analizar el riesgo crediticio, la exposición del capital y la tasa de incumplimiento mediante segmentación interactiva y métricas clave.

@@ -55,71 +55,74 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
+   {/* HERO */}
       <section 
         ref={heroRef}
-        className={`relative h-[calc(100vh-96px)] overflow-hidden transition-all duration-1000 ${
+        className={`relative h-[calc(100vh-72px)] flex flex-col justify-between overflow-hidden transition-all duration-1000 ${
           heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        {/* NOMBRE + REDES */}
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-black tracking-widest mb-3">
-            IAN TAPIA
-          </h1>
+        <div className="flex-1 flex flex-col justify-center items-center px-4">
+          {/* NOMBRE + REDES */}
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-black tracking-widest mb-3">
+              IAN TAPIA
+            </h1>
 
-          <div className="flex gap-6 text-2xl justify-center">
-            <a href="https://github.com/IanT1112" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-            <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin />
+            <div className="flex gap-6 text-2xl justify-center">
+              <a href="https://github.com/IanT1112" target="_blank" rel="noopener noreferrer">
+                <FaGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin />
+              </a>
+            </div>
+          </div>
+
+          {/* IMAGEN */}
+          <div className="flex justify-center items-center my-8 md:my-10">
+            <div className="relative w-[200px] h-[200px] md:w-[320px] md:h-[320px]">
+              <Image
+                src="/proyectos/ian.jpg"
+                alt="Ian Tapia"
+                fill
+                className="object-cover rounded-full"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* BOTÓN */}
+          <div className="text-center">
+            <a
+              href="/proyectos/iantapia-cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 rounded-xl bg-black text-white font-semibold hover:opacity-90 transition"
+            >
+              Ver CV
             </a>
           </div>
-        </div>
-
-        {/* IMAGEN */}
-        <div className="flex justify-center items-center my-10">
-          <div className="relative w-[220px] h-[220px] md:w-[320px] md:h-[320px]">
-            <Image
-              src="/proyectos/ian.jpg"
-              alt="Ian Tapia"
-              fill
-              className="object-cover rounded-full"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* BOTÓN */}
-        <div className="text-center mt-12">
-          <a
-            href="/proyectos/iantapia-cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-6 px-6 py-3 rounded-xl bg-black text-white font-semibold hover:opacity-90 transition"
-          >
-            Ver CV
-          </a>
         </div>
 
         {/* FOOTER HERO */}
-        <div className="w-full flex justify-between items-end text-sm px-2 md:px-12">
+        <div className="w-full grid grid-cols-3 items-end text-xs md:text-sm px-4 md:px-12 pb-4 md:pb-6">
           <div>
             <p>Estudiante</p>
             <p>Universitario</p>
           </div>
 
-          <div className="flex justify-center w-full mt-6 md:mt-10 text-xl md:text-2xl animate-bounce">
+          <div className="flex justify-center text-xl md:text-2xl animate-bounce">
             ↓
           </div>
-          <div className="text-right font-bold text-lg">
+          <div className="text-right font-bold text-sm md:text-lg">
             <p>Ingeniería</p>
             <p>Sistemas e IA</p>
           </div>
         </div>
 
       </section>
+
 
 
       {/* SOBRE MÍ */}

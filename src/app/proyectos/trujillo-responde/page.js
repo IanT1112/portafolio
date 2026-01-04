@@ -2,7 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 export default function TrujilloResponde() {
   return (
-    <main className="min-h-screen bg-[#cfe6b8] px-16 py-24 text-black">
+    <main className="min-h-screen bg-[#cfe6b8] px-16 py-4 text-black"
+      style={{
+        background: 'linear-gradient(135deg, #ffffff 0%, #E3EED4 30%, #AEC3B0 60%, #6B9071 100%)'
+      }}>
 
       {/* Navegación */}
       <div className="flex gap-4 mb-6 text-sm">
@@ -48,44 +51,60 @@ export default function TrujilloResponde() {
           </a>
         </div>
 
-      {/* Contenido */}
-            <div className="flex items-start">
-            <div className="space-y-4 max-w-3xl text-sm leading-relaxed">
-                <p>
-                Trujillo Responde es una plataforma digital orientada a la participación
-                ciudadana y a la mejora de la gestión municipal, desarrollada utilizando
-                servicios de Firebase y APIs de Google. La aplicación permite a los ciudadanos
-                reportar incidencias urbanas como baches, fallas en el alumbrado público,
-                problemas de limpieza u otros eventos que afectan la infraestructura de la
-                ciudad de Trujillo, Perú.
-                </p>
+          {/* Contenido */}
+          <div className="flex items-start">
+            {/* GLASS CARD */}
+            <div
+              className="
+                bg-white/20
+                backdrop-blur-md
+                border border-white/30
+                shadow-xl
+                rounded-2xl
+                p-6 md:p-10
+                max-w-3xl
+                text-sm
+                leading-relaxed
+              "
+            >
+              <div className="space-y-1">
+                            <p>
+                            Trujillo Responde es una plataforma digital orientada a la participación
+                            ciudadana y a la mejora de la gestión municipal, desarrollada utilizando
+                            servicios de Firebase y APIs de Google. La aplicación permite a los ciudadanos
+                            reportar incidencias urbanas como baches, fallas en el alumbrado público,
+                            problemas de limpieza u otros eventos que afectan la infraestructura de la
+                            ciudad de Trujillo, Perú.
+                            </p>
 
-                <p>
-                Cada reporte es geolocalizado mediante Google Maps, lo que permite identificar
-                con precisión la ubicación del problema, y es procesado mediante modelos de
-                Inteligencia Artificial integrados con Firebase, los cuales analizan la
-                información proporcionada por el usuario para clasificar automáticamente la
-                incidencia en categorías relevantes.
-                </p>
+                            <p>
+                            Cada reporte es geolocalizado mediante Google Maps, lo que permite identificar
+                            con precisión la ubicación del problema, y es procesado mediante modelos de
+                            Inteligencia Artificial integrados con Firebase, los cuales analizan la
+                            información proporcionada por el usuario para clasificar automáticamente la
+                            incidencia en categorías relevantes.
+                            </p>
 
-                <p>
-                Esta clasificación inteligente facilita la organización y priorización de los
-                reportes, optimizando los tiempos de atención por parte de las autoridades
-                municipales. La plataforma busca reducir la brecha entre la ciudadanía y la
-                gestión pública, promoviendo una respuesta más eficiente, transparente y basada
-                en datos.
-                </p>
+                            <p>
+                            Esta clasificación inteligente facilita la organización y priorización de los
+                            reportes, optimizando los tiempos de atención por parte de las autoridades
+                            municipales. La plataforma busca reducir la brecha entre la ciudadanía y la
+                            gestión pública, promoviendo una respuesta más eficiente, transparente y basada
+                            en datos.
+                            </p>
 
-                <p>
-                El proyecto demuestra la integración práctica de servicios en la nube, APIs
-                geoespaciales e inteligencia artificial, aplicados a un problema real de
-                impacto social, desde el diseño de la solución hasta su despliegue funcional
-                en la web.
-                </p>
+                            <p>
+                            El proyecto demuestra la integración práctica de servicios en la nube, APIs
+                            geoespaciales e inteligencia artificial, aplicados a un problema real de
+                            impacto social, desde el diseño de la solución hasta su despliegue funcional
+                            en la web.
+                            </p>
 
-            </div>
-            </div>
+                        </div>
+                    </div>
+      </div>
         </div>
     </main>
   );
 }
+

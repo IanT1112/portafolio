@@ -2,18 +2,17 @@ import Link from "next/link";
 
 export default function Proyectos() {
   return (
-    <main className="min-h-screen bg-[#cfe6b8] px-12 py-20 text-black"
+    <main className="min-h-screen bg-[#cfe6b8] px-12 py-4 text-black"
     style={{
         background: 'linear-gradient(135deg, #ffffff 0%, #E3EED4 30%, #AEC3B0 60%, #6B9071 100%)'
       }}
     >
-      <div className="flex gap-4 mb-6 text-sm">
-        
+      <div className="flex gap-3 mb-1 text-sm">
         <Link
-            href="/"
-            className="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition"
+          href="/"
+          className="px-5 py-2.5 bg-white/40 backdrop-blur-sm border border-gray-400/50 rounded-lg hover:bg-white/60 hover:border-gray-500 hover:shadow-md transition-all duration-200 font-medium"
         >
-            ← Inicio
+          ← Inicio
         </Link>
       </div>
       <h1 className="text-4xl font-bold mb-10 text-center">

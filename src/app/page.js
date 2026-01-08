@@ -1,5 +1,5 @@
 "use client";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -39,8 +39,7 @@ export default function Home() {
   const [heroRef, heroVisible] = useScrollReveal();
   const [sobreMiRef, sobreMiVisible] = useScrollReveal();
   const [proyectosRef, proyectosVisible] = useScrollReveal();
-  const [certificadosRef, certificadosVisible] = useScrollReveal();
-  const [contactoRef, contactoVisible] = useScrollReveal();
+
 
   return (
     <main 
@@ -54,7 +53,6 @@ export default function Home() {
         <div className="flex gap-10 md:gap-20 font-bold">
           <a href="#sobre-mi" className="hover:underline">sobre mí</a>
           <a href="#proyectos" className="hover:underline">proyectos</a>
-          <a href="#certificados" className="hover:underline">certificados</a>
         </div>
       </nav>
 
@@ -76,9 +74,12 @@ export default function Home() {
               <a href="https://github.com/IanT1112" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </a>
-              <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin />
-              </a>
+                <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin />
+                </a>
+                <a href="https://www.instagram.com/astro.dev_tech/" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram />
+                </a>
             </div>
           </div>
 
@@ -125,8 +126,6 @@ export default function Home() {
         </div>
 
       </section>
-
-
 
       {/* SOBRE MÍ */}
       <section
@@ -241,92 +240,7 @@ export default function Home() {
           </a>
         </div>
       </section>
-      {/* ========== SECCIÓN CERTIFICADOS ========== */}
-      <section
-        id="certificados"
-        ref={certificadosRef} 
-        className={`px-6 md:px-16 py-16 md:py-24 transition-all duration-1000 delay-300 ${
-          certificadosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-        }`}
-      >
-        {/* TÍTULO DE LA SECCIÓN */}
-        <h2 className="text-3xl md:text-4xl font-black text-center mb-4">
-          Certificados
-        </h2>
 
-        {/* SUBTÍTULO */}
-        <p className="text-sm mt-3 mb-12 max-w-xl text-center mx-auto">
-          Formación continua y especialización profesional
-        </p>
-
-        {/* GRID DE CERTIFICADOS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          {/* CERTIFICADO 1 */}
-          <div className="border border-black p-4 flex flex-col hover:shadow-lg transition-shadow">
-            <div className="relative w-full aspect-[4/3] mb-4">
-              <Image
-                src="/proyectos/certficado_powerBI.jpg"
-                alt="Certificado 1"
-                fill
-                className="object-cover rounded"
-              />
-            </div>
-            <h3 className="text-base font-bold mb-2 text-center">Toma mejores decisiones basadas en datos: Power BI</h3>
-            <a
-              href="/proyectos/Power Bi certificado Santander.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto w-full text-center border border-black px-4 py-2 font-semibold hover:bg-black hover:text-white transition"
-            >
-              Ver PDF
-            </a>
-          </div>
-
-          {/* CERTIFICADO 2 */}
-          <div className="border border-black p-4 flex flex-col hover:shadow-lg transition-shadow">
-            <div className="relative w-full aspect-[4/3] mb-4">
-              <Image
-                src="/proyectos/certificado_ibm.jpg"
-                alt="Certificado 2"
-                fill
-                className="object-cover rounded"
-              />
-            </div>
-            <h3 className="text-base font-bold mb-2 text-center">Introduction to Cloud</h3>
-            <a
-              href="/proyectos/Certificado IBM Cognitive Class.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto w-full text-center border border-black px-4 py-2 font-semibold hover:bg-black hover:text-white transition"
-            >
-              Ver PDF
-            </a>
-          </div>
-
-          {/* CERTIFICADO 3 */}
-          <div className="border border-black p-4 flex flex-col hover:shadow-lg transition-shadow">
-            <div className="relative w-full aspect-[4/3] mb-4">
-              <Image
-                src="/Proyectos/Certificado Data Analysis.jpg"
-                alt="Certificado 3"
-                fill
-                className="object-cover rounded"
-              />
-            </div>
-            <h3 className="text-base font-bold mb-2 text-center">Data Analysis with Python</h3>
-            <a
-              href="/proyectos/Data Analysis with Python.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto w-full text-center border border-black px-4 py-2 font-semibold hover:bg-black hover:text-white transition"
-            >
-              Ver PDF
-            </a>
-          </div>
-
-        </div>
-      </section>
     </main>
   );
 }

@@ -133,17 +133,7 @@ export default function ProyectoACV() {
             </div>
           </div>
         </div>
-
-        <div className="flex flex-col gap-6">
-          <div className="relative w-full aspect-[16/10]">
-            <Image
-              src="/proyectos/diagrama acv.png"
-              alt="Sistema de IA para detección temprana de ACV"
-              fill
-              className="object-contain rounded-lg"
-            />
-          </div>
-        </div>
+        
       </div>
 
     </main>

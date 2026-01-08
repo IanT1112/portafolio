@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react";
 
 export default function TrujilloResponde() {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
   return (
     <main 
       className="min-h-screen px-6 md:px-16 py-4 text-black"
@@ -31,29 +35,41 @@ export default function TrujilloResponde() {
         Trujillo Responde
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        {/* Imagen */}
-        <div className="flex flex-col gap-6">
-          <div className="relative w-full aspect-[16/10]">
-            <Image
-              src="/proyectos/trujillo-responde.png"
-              alt="Trujillo Responde"
-              fill
-              className="object-contain rounded-lg"
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Iframe interactivo */}
+        <div className="flex flex-col gap-4">
+          <div className="relative w-full aspect-[14/10] border-4 border-white/30 rounded-2xl overflow-hidden shadow-2xl bg-white">
+            <iframe
+              src="https://studio--trujillo-responde-2-7719-1bf4c.us-central1.hosted.app/"
+              className="w-full h-full"
+              title="Trujillo Responde - Aplicación interactiva"
+              allow="geolocation; clipboard-write"
             />
           </div>
 
           <div className="flex gap-4">
+            <button
+              onClick={() => setIsFullscreen(true)}
+              className="flex items-center justify-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg hover:bg-white hover:shadow-lg transition font-medium"
+              title="Ver en pantalla completa"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+              <span className="hidden sm:inline">Pantalla completa</span>
+            </button>
+
             <a
               href="https://studio--trujillo-responde-2-7719-1bf4c.us-central1.hosted.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg hover:bg-white hover:shadow-lg transition"
-              title="Ver prototipo en Web"
+              className="flex items-center justify-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg hover:bg-white hover:shadow-lg transition font-medium"
+              title="Abrir en nueva pestaña"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
+              <span className="hidden sm:inline">Nueva pestaña</span>
             </a>
           </div>
         </div>
@@ -110,7 +126,33 @@ export default function TrujilloResponde() {
         </div>
       </div>
 
+      {/* Modal Fullscreen */}
+      {isFullscreen && (
+        <div className="fixed inset-0 bg-black z-50 flex flex-col">
+          {/* Barra superior */}
+          <div className="bg-gray-900 text-white p-4 flex justify-between items-center">
+            <h3 className="text-lg font-semibold">Trujillo Responde</h3>
+            <button
+              onClick={() => setIsFullscreen(false)}
+              className="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition flex items-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              Cerrar
+            </button>
+          </div>
+          
+          {/* Iframe fullscreen */}
+          <iframe
+            src="https://studio--trujillo-responde-2-7719-1bf4c.us-central1.hosted.app/"
+            className="w-full flex-1"
+            title="Trujillo Responde Fullscreen"
+            allow="geolocation; clipboard-write"
+          />
+        </div>
+      )}
+
     </main>
   );
 }
-

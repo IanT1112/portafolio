@@ -53,6 +53,7 @@ export default function Home() {
         <div className="flex gap-10 md:gap-20 font-bold">
           <a href="#sobre-mi" className="hover:underline">sobre mí</a>
           <a href="#proyectos" className="hover:underline">proyectos</a>
+
         </div>
       </nav>
 
@@ -126,6 +127,7 @@ export default function Home() {
         </div>
 
       </section>
+      
 
       {/* SOBRE MÍ */}
       <section
@@ -241,6 +243,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOOTER */}
+      <footer className="border-t border-black py-6">
+        <p className="text-center text-sm">
+          Creado por <span className="font-bold">Ian Tapia</span> © 2025
+        </p>
+      </footer>
+      
     </main>
   );
 }

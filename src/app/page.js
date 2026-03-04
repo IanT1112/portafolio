@@ -55,14 +55,14 @@ export default function Home() {
 
     try {
       await emailjs.send(
-        "service_qrh3oek",
-        "template_cf8zt6l",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
           name: correo,
           correo: correo,
           message: contenido,
         },
-        "pAp181YvnCFkH3RAe"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
       setEnviado(true);
       setFormData({ correo: "", contenido: "" });
@@ -369,7 +369,7 @@ export default function Home() {
                   className="text-center text-sm font-semibold mt-1 animate-pulse"
                   style={{ color: '#4a7055' }}
                 >
-                  ✓ Enviando correo…
+                  ✓ Enviando mensaje...
                 </p>
               )}
             </form>
@@ -386,4 +386,3 @@ export default function Home() {
     </main>
   );
 }
-

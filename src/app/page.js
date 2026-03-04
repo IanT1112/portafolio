@@ -369,7 +369,7 @@ export default function Home() {
                   className="text-center text-sm font-semibold mt-1 animate-pulse"
                   style={{ color: '#4a7055' }}
                 >
-                  ✓ Abriendo tu cliente de correo…
+                  ✓ Enviando correo…
                 </p>
               )}
             </form>

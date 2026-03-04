@@ -128,7 +128,7 @@ export default function Home() {
 
           <div className="text-center">
             <a
-              href="/proyectos/iantapia-cv.pdf"
+              href="/proyectos/iantapia_cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 rounded-xl bg-black text-white font-semibold hover:opacity-90 transition"

@@ -128,7 +128,7 @@ export default function Home() {
 
           <div className="text-center">
             <a
-              href="/proyectos/iantapia_cv.pdf"
+              href="/proyectos/cv-iantapia.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 rounded-xl bg-black text-white font-semibold hover:opacity-90 transition"
@@ -229,6 +229,13 @@ export default function Home() {
               Dashboard financiero desarrollado en Power BI para analizar el riesgo crediticio,
               la exposición del capital y la tasa de incumplimiento mediante segmentación
               interactiva y métricas clave.
+            </p>
+          </div>
+          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
+            <h3 className="text-lg font-bold mb-4">Blog Personal — ianconia.xyz</h3>
+            <p className="text-sm leading-relaxed">
+              Plataforma editorial fullstack con newsletter, panel admin privado y
+              experiencia de lectura estilo NYT. Dominio propio, deploy en Vercel.
             </p>
           </div>
         </div>

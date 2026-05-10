@@ -1,52 +1,58 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
 
 const stack = [
   {
-    categoria: "Lenguaje",
-    items: ["Python"],
+    categoria: "Frontend",
+    items: ["React 19 + Vite", "Tailwind CSS v4", "React Router DOM", "html2canvas"],
   },
   {
-    categoria: "Machine Learning",
-    items: ["Scikit-learn – modelos de clasificación y evaluación", "Pandas – procesamiento y limpieza de datos"],
+    categoria: "Backend & BD",
+    items: ["Supabase (PostgreSQL + RLS)", "Supabase Storage", "Supabase Edge Functions", "Supabase Auth (JWT)"],
+  },
+  {
+    categoria: "Email",
+    items: ["Resend API", "DKIM, SPF y DMARC"],
   },
   {
     categoria: "Deploy",
-    items: ["Streamlit – aplicación web interactiva", "Streamlit Cloud"],
-  },
-  {
-    categoria: "Control de versiones",
-    items: ["Git & GitHub"],
+    items: ["Vercel (CI/CD)", "Dominio propio: ianconia.xyz", "DNS en Porkbun"],
   },
 ];
 
 const funcionalidades = [
   {
-    grupo: "Modelo e IA",
+    grupo: "Experiencia pública",
     items: [
-      "Análisis y preparación de datos clínicos reales",
-      "Entrenamiento de modelo de clasificación de riesgo de ACV",
-      "Evaluación del modelo con métricas de rendimiento",
+      "Landing editorial con hero, imagen personal y animaciones de entrada",
+      "Carrusel responsive (1 / 2 / 4 cards según pantalla)",
+      "Página de lectura estilo NYT con barra de progreso, drop cap y tipografía editorial",
+      "Sistema de newsletter con email de bienvenida automático",
+      "Generador de imagen para Instagram Stories (1080×1920 px) con glassmorphism",
+      "Botón Web Share API para compartir en móvil",
     ],
   },
   {
-    grupo: "Aplicación web",
+    grupo: "Panel administrativo",
     items: [
-      "Interfaz interactiva para ingresar variables clínicas y hábitos de vida",
-      "Estimación del nivel de riesgo en tiempo real",
-      "Presentación de resultados clara para el usuario final",
+      "Login con autenticación JWT",
+      "Publicar, editar y eliminar artículos, libros y documentales",
+      "Doble imagen por post (vertical para card, horizontal para lectura)",
+      "Notificaciones por email a suscriptores con rate limiting",
     ],
   },
   {
-    grupo: "Deploy",
+    grupo: "Infraestructura",
     items: [
-      "Despliegue en Streamlit Cloud",
-      "Acceso público sin instalación",
+      "Row Level Security en todas las tablas",
+      "Políticas de acceso diferenciadas (anon / authenticated)",
+      "Routing con vercel.json para SPA",
+      "Auto-deploy en cada git push",
     ],
   },
 ];
 
-export default function ProyectoACV() {
+export default function BlogPersonal() {
   return (
     <main
       className="min-h-screen text-black px-6 md:px-16 py-8"
@@ -54,6 +60,7 @@ export default function ProyectoACV() {
         background: "linear-gradient(135deg, #ffffff 0%, #E3EED4 30%, #AEC3B0 60%, #6B9071 100%)",
       }}
     >
+      {/* NAV */}
       <div className="mb-8">
         <Link
           href="/proyectos"
@@ -63,47 +70,25 @@ export default function ProyectoACV() {
         </Link>
       </div>
 
+      {/* HEADER */}
       <div className="max-w-3xl mx-auto mb-16">
         <p className="text-xs uppercase tracking-widest text-[#4a7055] font-bold mb-3">Proyecto</p>
-        <h1 className="text-4xl md:text-5xl font-black mb-6">
-          Sistema de IA para detección temprana de ACV
-        </h1>
+        <h1 className="text-4xl md:text-5xl font-black mb-6">Blog Personal</h1>
         <p className="text-base md:text-lg leading-relaxed text-black/80 mb-8">
-          Sistema de machine learning aplicado a la salud para la detección temprana del riesgo
-          de Accidente Cerebrovascular, utilizando datos clínicos reales. Cubre todo el ciclo:
-          análisis de datos, entrenamiento del modelo y despliegue de aplicación web interactiva.
+          Plataforma editorial personal fullstack construida desde cero, donde el autor publica
+          artículos, reseñas de libros y documentales con una experiencia de lectura premium.
         </p>
-        <div className="flex gap-4">
-          <a
-            href="https://deteccion-acv.streamlit.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border border-black px-8 py-3 font-semibold text-sm hover:bg-black hover:text-white transition"
-          >
-            Ver sitio en vivo →
-          </a>
-          <a
-            href="https://github.com/IanT1112/proyecto-ACV"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border border-black px-8 py-3 font-semibold text-sm hover:bg-black hover:text-white transition"
-          >
-            Ver en GitHub →
-          </a>
-        </div>
+        <a
+          href="https://www.ianconia.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block border border-black px-8 py-3 font-semibold text-sm hover:bg-black hover:text-white transition"
+        >
+          Ver sitio en vivo → ianconia.xyz
+        </a>
       </div>
 
-      <div className="max-w-3xl mx-auto mb-16">
-        <div className="relative w-full aspect-[16/9]">
-          <Image
-            src="/proyectos/acv.png"
-            alt="Sistema de IA para detección temprana de ACV"
-            fill
-            className="object-contain rounded-lg border border-black/10"
-          />
-        </div>
-      </div>
-
+      {/* STACK TÉCNICO */}
       <div className="max-w-3xl mx-auto mb-16">
         <h2 className="text-2xl font-black mb-8 border-b border-black/20 pb-3">Stack técnico</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -125,6 +110,7 @@ export default function ProyectoACV() {
         </div>
       </div>
 
+      {/* FUNCIONALIDADES */}
       <div className="max-w-3xl mx-auto mb-16">
         <h2 className="text-2xl font-black mb-8 border-b border-black/20 pb-3">Funcionalidades</h2>
         <div className="flex flex-col gap-8">
@@ -146,25 +132,25 @@ export default function ProyectoACV() {
         </div>
       </div>
 
+      {/* LO QUE DEMUESTRA */}
       <div className="max-w-3xl mx-auto mb-20">
         <h2 className="text-2xl font-black mb-8 border-b border-black/20 pb-3">Lo que demuestra</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            "Aplicación práctica de ML en un problema real de salud",
-            "Ciclo completo de un proyecto de datos: desde el raw data hasta producción",
-            "Despliegue de modelos de IA en aplicaciones web accesibles",
-            "Diseño orientado al usuario final, no solo al técnico",
+            "Arquitectura fullstack sin framework backend tradicional",
+            "Integración de múltiples servicios en la nube",
+            "Diseño UI/UX de nivel editorial sin librerías de componentes",
+            "Seguridad con RLS y autenticación JWT",
+            "Flujo completo: idea → diseño → desarrollo → deploy → dominio propio",
           ].map((item) => (
-            <div
-              key={item}
-              className="border border-black/20 p-5 bg-white/30 backdrop-blur-sm text-sm leading-relaxed"
-            >
+            <div key={item} className="border border-black/20 p-5 bg-white/30 backdrop-blur-sm text-sm leading-relaxed">
               {item}
             </div>
           ))}
         </div>
       </div>
 
+      {/* FOOTER NAV */}
       <div className="max-w-3xl mx-auto text-center">
         <Link
           href="/proyectos"

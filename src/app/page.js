@@ -17,7 +17,7 @@ function useScrollReveal() {
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -34,6 +34,29 @@ function useScrollReveal() {
 
   return [ref, isVisible];
 }
+
+const proyectos = [
+  {
+    title: "Sistema de IA para detección temprana de ACV",
+    desc: "Aplicación web basada en aprendizaje estadístico que predice el riesgo de ACV utilizando modelos de machine learning entrenados con datos reales.",
+    url: "https://ian-tapiaa.vercel.app/proyectos/acv",
+  },
+  {
+    title: "Trujillo Responde",
+    desc: "Plataforma ciudadana para el reporte de incidencias urbanas, con geolocalización y categorización inteligente para mejorar la gestión municipal.",
+    url: "https://ian-tapiaa.vercel.app/proyectos/trujillo-responde",
+  },
+  {
+    title: "Dashboard Historial Crediticio",
+    desc: "Dashboard financiero desarrollado en Power BI para analizar el riesgo crediticio, la exposición del capital y la tasa de incumplimiento mediante segmentación interactiva y métricas clave.",
+    url: "https://ian-tapiaa.vercel.app/proyectos/dashboard",
+  },
+  {
+    title: "Blog Personal — ianconia.xyz",
+    desc: "Plataforma editorial fullstack con newsletter, panel admin privado y experiencia de lectura estilo NYT. Dominio propio, deploy en Vercel.",
+    url: "https://ian-tapiaa.vercel.app/proyectos/blog-personal",
+  },
+];
 
 export default function Home() {
   const [heroRef, heroVisible] = useScrollReveal();
@@ -77,15 +100,22 @@ export default function Home() {
     <main
       className="min-h-screen text-black"
       style={{
-        background: 'linear-gradient(135deg, #ffffff 0%, #E3EED4 30%, #AEC3B0 60%, #6B9071 100%)'
+        background:
+          "linear-gradient(135deg, #ffffff 0%, #E3EED4 30%, #AEC3B0 60%, #6B9071 100%)",
       }}
     >
       {/* NAVBAR */}
       <nav className="flex justify-center items-center px-6 md:px-12 py-6 text-sm uppercase tracking-wide">
         <div className="flex gap-10 md:gap-20 font-bold">
-          <a href="#sobre-mi" className="hover:underline">sobre mí</a>
-          <a href="#proyectos" className="hover:underline">proyectos</a>
-          <a href="#contacto" className="hover:underline">contacto</a>
+          <a href="#sobre-mi" className="hover:underline">
+            sobre mí
+          </a>
+          <a href="#proyectos" className="hover:underline">
+            proyectos
+          </a>
+          <a href="#contacto" className="hover:underline">
+            contacto
+          </a>
         </div>
       </nav>
 
@@ -93,7 +123,7 @@ export default function Home() {
       <section
         ref={heroRef}
         className={`relative h-[calc(100vh-72px)] flex flex-col justify-between overflow-hidden transition-all duration-1000 ${
-          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         <div className="flex-1 flex flex-col justify-center items-center px-4">
@@ -102,13 +132,25 @@ export default function Home() {
               IAN TAPIA
             </h1>
             <div className="flex gap-6 text-2xl justify-center">
-              <a href="https://github.com/IanT1112" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/IanT1112"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaGithub />
               </a>
-              <a href="https://www.linkedin.com/in/ian-tapia-144736210" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/ian-tapia-144736210"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedin />
               </a>
-              <a href="https://www.instagram.com/astro.dev_tech/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/astro.dev_tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaInstagram />
               </a>
             </div>
@@ -143,7 +185,9 @@ export default function Home() {
             <p>Estudiante</p>
             <p>Universitario</p>
           </div>
-          <div className="flex justify-center text-xl md:text-2xl animate-bounce">↓</div>
+          <div className="flex justify-center text-xl md:text-2xl animate-bounce">
+            ↓
+          </div>
           <div className="text-right font-bold text-sm md:text-lg">
             <p>Ingeniería</p>
             <p>Sistemas e IA</p>
@@ -156,7 +200,9 @@ export default function Home() {
         id="sobre-mi"
         ref={sobreMiRef}
         className={`px-6 md:px-16 py-16 md:py-24 transition-all duration-1000 delay-200 ${
-          sobreMiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+          sobreMiVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
         }`}
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -174,22 +220,22 @@ export default function Home() {
           <div>
             <h2 className="text-3xl md:text-4xl font-black mb-6">Sobre mí</h2>
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              Soy estudiante de Ingeniería de Sistemas e Inteligencia Artificial, con un enfoque
-              práctico en el desarrollo de soluciones tecnológicas basadas en datos y servicios
-              en la nube.
+              Soy estudiante de Ingeniería de Sistemas e Inteligencia Artificial,
+              con un enfoque práctico en el desarrollo de soluciones tecnológicas
+              basadas en datos y servicios en la nube.
             </p>
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              He trabajado en proyectos de Machine Learning aplicados a problemas reales, desde
-              el preprocesamiento de datos y entrenamiento de modelos hasta su despliegue en
-              aplicaciones web funcionales.
+              He trabajado en proyectos de Machine Learning aplicados a problemas
+              reales, desde el preprocesamiento de datos y entrenamiento de modelos
+              hasta su despliegue en aplicaciones web funcionales.
             </p>
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              Cuento con conocimientos en AWS, Google Cloud y Firebase, así como en la integración
-              de APIs externas como Google Maps.
+              Cuento con conocimientos en AWS, Google Cloud y Firebase, así como en
+              la integración de APIs externas como Google Maps.
             </p>
             <p className="text-base md:text-lg leading-relaxed">
-              Busco seguir fortaleciendo mi perfil profesional en IA aplicada, cloud computing y
-              desarrollo de soluciones modernas.
+              Busco seguir fortaleciendo mi perfil profesional en IA aplicada, cloud
+              computing y desarrollo de soluciones modernas.
             </p>
           </div>
         </div>
@@ -200,44 +246,31 @@ export default function Home() {
         id="proyectos"
         ref={proyectosRef}
         className={`px-6 md:px-16 py-16 md:py-24 transition-all duration-1000 delay-300 ${
-          proyectosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+          proyectosVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
         }`}
       >
-        <h2 className="text-3xl md:text-4xl font-black text-center">Proyectos</h2>
+        <h2 className="text-3xl md:text-4xl font-black text-center">
+          Proyectos
+        </h2>
         <p className="text-sm mt-3 mb-12 max-w-xl text-center mx-auto">
           Cada proyecto realizado es un paso más hacia la excelencia profesional
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold mb-4">Sistema de IA para detección temprana de ACV</h3>
-            <p className="text-sm leading-relaxed">
-              Aplicación web basada en aprendizaje estadístico que predice el riesgo de ACV
-              utilizando modelos de machine learning entrenados con datos reales.
-            </p>
-          </div>
-          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold mb-4">Trujillo Responde</h3>
-            <p className="text-sm leading-relaxed">
-              Plataforma ciudadana para el reporte de incidencias urbanas, con geolocalización
-              y categorización inteligente para mejorar la gestión municipal.
-            </p>
-          </div>
-          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold mb-4">Dashboard Historial Crediticio</h3>
-            <p className="text-sm">
-              Dashboard financiero desarrollado en Power BI para analizar el riesgo crediticio,
-              la exposición del capital y la tasa de incumplimiento mediante segmentación
-              interactiva y métricas clave.
-            </p>
-          </div>
-          <div className="border border-black p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
-            <h3 className="text-lg font-bold mb-4">Blog Personal — ianconia.xyz</h3>
-            <p className="text-sm leading-relaxed">
-              Plataforma editorial fullstack con newsletter, panel admin privado y
-              experiencia de lectura estilo NYT. Dominio propio, deploy en Vercel.
-            </p>
-          </div>
+          {proyectos.map((proyecto) => (
+            <a
+              key={proyecto.url}
+              href={proyecto.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-black p-6 flex flex-col justify-between hover:shadow-lg hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+            >
+              <h3 className="text-lg font-bold mb-4">{proyecto.title}</h3>
+              <p className="text-sm leading-relaxed">{proyecto.desc}</p>
+            </a>
+          ))}
         </div>
 
         <div className="text-center mt-12">
@@ -255,41 +288,41 @@ export default function Home() {
         id="contacto"
         ref={contactoRef}
         className={`px-6 md:px-16 py-16 md:py-28 transition-all duration-1000 delay-300 ${
-          contactoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+          contactoVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
         }`}
       >
-        <h2 className="text-3xl md:text-4xl font-black text-center mb-3">Contacto</h2>
+        <h2 className="text-3xl md:text-4xl font-black text-center mb-3">
+          Contacto
+        </h2>
         <p className="text-sm mt-1 mb-14 max-w-xl text-center mx-auto text-black/70">
           ¿Tienes un proyecto en mente o quieres colaborar? Escríbeme directamente.
         </p>
 
-        {/* CARD ESPEJO + FORMULARIO */}
         <div className="max-w-xl mx-auto relative">
-
-          {/* ESPEJO — card decorativa detrás */}
           <div
             className="absolute inset-0 rounded-3xl translate-x-3 translate-y-3"
             style={{
-              background: 'linear-gradient(135deg, rgba(107,144,113,0.45) 0%, rgba(174,195,176,0.3) 100%)',
-              backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(107,144,113,0.4)',
-              boxShadow: '0 8px 32px rgba(107,144,113,0.25)',
+              background:
+                "linear-gradient(135deg, rgba(107,144,113,0.45) 0%, rgba(174,195,176,0.3) 100%)",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(107,144,113,0.4)",
+              boxShadow: "0 8px 32px rgba(107,144,113,0.25)",
             }}
           />
 
-          {/* FORMULARIO — encima del espejo */}
           <div
             className="relative rounded-3xl p-8 md:p-10"
             style={{
-              background: 'linear-gradient(145deg, rgba(255,255,255,0.72) 0%, rgba(227,238,212,0.65) 100%)',
-              backdropFilter: 'blur(16px)',
-              border: '1px solid rgba(255,255,255,0.6)',
-              boxShadow: '0 4px 24px rgba(107,144,113,0.18)',
+              background:
+                "linear-gradient(145deg, rgba(255,255,255,0.72) 0%, rgba(227,238,212,0.65) 100%)",
+              backdropFilter: "blur(16px)",
+              border: "1px solid rgba(255,255,255,0.6)",
+              boxShadow: "0 4px 24px rgba(107,144,113,0.18)",
             }}
           >
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-
-              {/* INPUT CORREO */}
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-bold uppercase tracking-widest text-[#4a7055]">
                   Tu correo
@@ -303,22 +336,22 @@ export default function Home() {
                   required
                   className="w-full px-4 py-3 rounded-xl text-sm outline-none transition"
                   style={{
-                    background: 'rgba(255,255,255,0.55)',
-                    border: '1.5px solid rgba(107,144,113,0.35)',
-                    color: '#1a2e1f',
+                    background: "rgba(255,255,255,0.55)",
+                    border: "1.5px solid rgba(107,144,113,0.35)",
+                    color: "#1a2e1f",
                   }}
                   onFocus={(e) => {
-                    e.target.style.border = '1.5px solid #6B9071';
-                    e.target.style.background = 'rgba(255,255,255,0.8)';
+                    e.target.style.border = "1.5px solid #6B9071";
+                    e.target.style.background = "rgba(255,255,255,0.8)";
                   }}
                   onBlur={(e) => {
-                    e.target.style.border = '1.5px solid rgba(107,144,113,0.35)';
-                    e.target.style.background = 'rgba(255,255,255,0.55)';
+                    e.target.style.border =
+                      "1.5px solid rgba(107,144,113,0.35)";
+                    e.target.style.background = "rgba(255,255,255,0.55)";
                   }}
                 />
               </div>
 
-              {/* TEXTAREA CONTENIDO */}
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-bold uppercase tracking-widest text-[#4a7055]">
                   Mensaje
@@ -332,49 +365,52 @@ export default function Home() {
                   rows={5}
                   className="w-full px-4 py-3 rounded-xl text-sm outline-none transition resize-none"
                   style={{
-                    background: 'rgba(255,255,255,0.55)',
-                    border: '1.5px solid rgba(107,144,113,0.35)',
-                    color: '#1a2e1f',
+                    background: "rgba(255,255,255,0.55)",
+                    border: "1.5px solid rgba(107,144,113,0.35)",
+                    color: "#1a2e1f",
                   }}
                   onFocus={(e) => {
-                    e.target.style.border = '1.5px solid #6B9071';
-                    e.target.style.background = 'rgba(255,255,255,0.8)';
+                    e.target.style.border = "1.5px solid #6B9071";
+                    e.target.style.background = "rgba(255,255,255,0.8)";
                   }}
                   onBlur={(e) => {
-                    e.target.style.border = '1.5px solid rgba(107,144,113,0.35)';
-                    e.target.style.background = 'rgba(255,255,255,0.55)';
+                    e.target.style.border =
+                      "1.5px solid rgba(107,144,113,0.35)";
+                    e.target.style.background = "rgba(255,255,255,0.55)";
                   }}
                 />
               </div>
 
-              {/* BOTÓN ENVIAR */}
               <button
                 type="submit"
                 className="mt-2 w-full py-3 rounded-xl font-bold text-sm uppercase tracking-widest transition-all duration-300"
                 style={{
-                  background: 'linear-gradient(135deg, #4a7055 0%, #6B9071 100%)',
-                  color: '#ffffff',
-                  boxShadow: '0 4px 16px rgba(74,112,85,0.35)',
+                  background: "linear-gradient(135deg, #4a7055 0%, #6B9071 100%)",
+                  color: "#ffffff",
+                  boxShadow: "0 4px 16px rgba(74,112,85,0.35)",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = 'linear-gradient(135deg, #3a5a44 0%, #4a7055 100%)';
-                  e.target.style.boxShadow = '0 6px 20px rgba(74,112,85,0.5)';
-                  e.target.style.transform = 'translateY(-1px)';
+                  e.target.style.background =
+                    "linear-gradient(135deg, #3a5a44 0%, #4a7055 100%)";
+                  e.target.style.boxShadow =
+                    "0 6px 20px rgba(74,112,85,0.5)";
+                  e.target.style.transform = "translateY(-1px)";
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = 'linear-gradient(135deg, #4a7055 0%, #6B9071 100%)';
-                  e.target.style.boxShadow = '0 4px 16px rgba(74,112,85,0.35)';
-                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.background =
+                    "linear-gradient(135deg, #4a7055 0%, #6B9071 100%)";
+                  e.target.style.boxShadow =
+                    "0 4px 16px rgba(74,112,85,0.35)";
+                  e.target.style.transform = "translateY(0)";
                 }}
               >
                 Enviar mensaje →
               </button>
 
-              {/* CONFIRMACIÓN */}
               {enviado && (
                 <p
                   className="text-center text-sm font-semibold mt-1 animate-pulse"
-                  style={{ color: '#4a7055' }}
+                  style={{ color: "#4a7055" }}
                 >
                   ✓ Enviando mensaje...
                 </p>

@@ -81,7 +81,7 @@ export default function GiChat() {
 
       {/* HEADER */}
       <div className="max-w-3xl mx-auto mb-16">
-        <p className="text-xs uppercase tracking-widest text-[#6b4fa0] font-bold mb-3">Proyecto personal · 2024</p>
+        <p className="text-xs uppercase tracking-widest text-[#6b4fa0] font-bold mb-3">Proyecto personal</p>
         <h1 className="text-4xl md:text-5xl font-black mb-6">GiChat</h1>
         <p className="text-base md:text-lg leading-relaxed text-black/80 mb-8">
           Landing page con chatbot de intent detection construido completamente desde cero en

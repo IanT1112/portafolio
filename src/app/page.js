@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 function useScrollReveal() {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,22 +40,27 @@ const proyectos = [
   {
     title: "Sistema de IA para detección temprana de ACV",
     desc: "Aplicación web basada en aprendizaje estadístico que predice el riesgo de ACV utilizando modelos de machine learning entrenados con datos reales.",
-    url: "https://ian-tapiaa.vercel.app/proyectos/acv",
+    url: "proyectos/acv",
   },
   {
     title: "Trujillo Responde",
     desc: "Plataforma ciudadana para el reporte de incidencias urbanas, con geolocalización y categorización inteligente para mejorar la gestión municipal.",
-    url: "https://ian-tapiaa.vercel.app/proyectos/trujillo-responde",
+    url: "proyectos/trujillo-responde",
   },
   {
     title: "Dashboard Historial Crediticio",
     desc: "Dashboard financiero desarrollado en Power BI para analizar el riesgo crediticio, la exposición del capital y la tasa de incumplimiento mediante segmentación interactiva y métricas clave.",
-    url: "https://ian-tapiaa.vercel.app/proyectos/dashboard",
+    url: "proyectos/dashboard",
   },
   {
     title: "Blog Personal — ianconia.xyz",
     desc: "Plataforma editorial fullstack con newsletter, panel admin privado y experiencia de lectura estilo NYT. Dominio propio, deploy en Vercel.",
-    url: "https://ian-tapiaa.vercel.app/proyectos/blog-personal",
+    url: "proyectos/blog-personal",
+  },
+  {
+    title: "GiChat",
+    desc: "Landing page con chatbot de intent detection construido desde cero en JS puro — sin APIs ni frameworks. Detección ponderada por keywords, widget DOM dinámico y acciones contextuales.",
+    url: "proyectos/gi-chat",
   },
 ];
 
@@ -260,7 +266,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {proyectos.map((proyecto) => (
-            <a
+            <Link
               key={proyecto.url}
               href={proyecto.url}
               target="_blank"
@@ -269,7 +275,7 @@ export default function Home() {
             >
               <h3 className="text-lg font-bold mb-4">{proyecto.title}</h3>
               <p className="text-sm leading-relaxed">{proyecto.desc}</p>
-            </a>
+            </Link>
           ))}
         </div>
 

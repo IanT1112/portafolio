@@ -15,6 +15,10 @@ const stack = [
     items: ["Resend API", "DKIM, SPF y DMARC"],
   },
   {
+    categoria: "Analytics",
+    items: ["Google Analytics 4", "Métricas de usuarios activos en tiempo real", "Seguimiento de eventos y páginas vistas"],
+  },
+  {
     categoria: "Deploy",
     items: ["Vercel (CI/CD)", "Dominio propio: ianconia.xyz", "DNS en Porkbun"],
   },
@@ -39,6 +43,14 @@ const funcionalidades = [
       "Publicar, editar y eliminar artículos, libros y documentales",
       "Doble imagen por post (vertical para card, horizontal para lectura)",
       "Notificaciones por email a suscriptores con rate limiting",
+    ],
+  },
+  {
+    grupo: "Analytics",
+    items: [
+      "Google Analytics 4 integrado para seguimiento de tráfico",
+      "Panel de usuarios activos en tiempo real",
+      "Métricas de páginas vistas, sesiones y comportamiento de lectura",
     ],
   },
   {
@@ -141,6 +153,7 @@ export default function BlogPersonal() {
             "Integración de múltiples servicios en la nube",
             "Diseño UI/UX de nivel editorial sin librerías de componentes",
             "Seguridad con RLS y autenticación JWT",
+            "Monitoreo de tráfico y comportamiento con Google Analytics 4",
             "Flujo completo: idea → diseño → desarrollo → deploy → dominio propio",
           ].map((item) => (
             <div key={item} className="border border-black/20 p-5 bg-white/30 backdrop-blur-sm text-sm leading-relaxed">

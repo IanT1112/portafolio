@@ -72,3 +72,209 @@ html {
 .animate-slide-up {
   animation: slideUp 0.8s ease-out forwards;
 }
+
+.about-gallery {
+  perspective: 1200px;
+}
+
+.about-gallery-slide {
+  backface-visibility: hidden;
+  transform-origin: left center;
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-gallery-slide-active {
+  opacity: 1;
+  transform: rotateY(0deg) translateX(0);
+  z-index: 2;
+}
+
+.about-gallery-slide-hidden {
+  opacity: 0;
+  transform: rotateY(-16deg) translateX(8%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-gallery-slide {
+    transition: opacity 150ms ease;
+  }
+
+  .about-gallery-slide-hidden {
+    transform: none;
+  }
+}
+
+.contact-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.contact-orb-one {
+  top: -8rem;
+  right: -7rem;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgb(181 211 174 / 0.2), transparent 68%);
+}
+
+.contact-orb-two {
+  bottom: -11rem;
+  left: -9rem;
+  width: 25rem;
+  height: 25rem;
+  border: 1px solid rgb(181 211 174 / 0.12);
+  box-shadow:
+    0 0 0 3rem rgb(181 211 174 / 0.025),
+    0 0 0 7rem rgb(181 211 174 / 0.018);
+}
+
+.contact-field {
+  width: 100%;
+  border: 1px solid rgb(54 91 64 / 0.2);
+  border-radius: 0.85rem;
+  background: rgb(255 255 255 / 0.7);
+  padding: 0.95rem 1rem;
+  color: #17251b;
+  font-size: 0.875rem;
+  outline: none;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-field::placeholder {
+  color: rgb(23 37 27 / 0.4);
+}
+
+.contact-field:focus {
+  border-color: #4a7055;
+  background: white;
+  box-shadow: 0 0 0 4px rgb(74 112 85 / 0.1);
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgb(54 91 64 / 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(54 91 64 / 0.12) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+.project-carousel {
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.project-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  scroll-snap-align: start;
+}
+
+.service-row {
+  position: relative;
+}
+
+.service-row::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(90deg, rgb(255 255 255 / 0.48), transparent);
+  opacity: 0;
+  transform: scaleX(0.97);
+  transform-origin: left;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.service-row:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.technology-columns {
+  isolation: isolate;
+}
+
+.technology-marquee {
+  overflow: hidden;
+}
+
+.technology-track {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: technology-scroll 32s linear infinite;
+}
+
+.technology-track-reverse {
+  animation-direction: reverse;
+  animation-duration: 37s;
+}
+
+.technology-pill {
+  display: flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 0.07);
+  padding: 0.75rem;
+  color: rgb(255 255 255 / 0.82);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.technology-pill-accent {
+  border-color: rgb(181 211 174 / 0.2);
+  background: rgb(181 211 174 / 0.1);
+}
+
+.technology-fade {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  height: 5rem;
+  pointer-events: none;
+}
+
+.technology-fade-top {
+  top: 0;
+  background: linear-gradient(#1f3a27, transparent);
+}
+
+.technology-fade-bottom {
+  bottom: 0;
+  background: linear-gradient(transparent, #1f3a27);
+}
+
+@keyframes technology-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-50% - 0.375rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technology-track,
+  .technology-track-reverse {
+    animation-play-state: paused;
+  }
+}

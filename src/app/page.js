@@ -341,7 +341,7 @@ export default function Home() {
                   ],
                   [
                     "Instagram",
-                    "https://www.instagram.com/astro.dev_tech/",
+                    "https://www.instagram.com/iantapia.me/",
                     <FaInstagram key="hero-instagram" />,
                   ],
                 ].map(([nombre, url, icono]) => (
@@ -849,7 +849,7 @@ export default function Home() {
                     ],
                     [
                       "Instagram",
-                      "https://www.instagram.com/astro.dev_tech/",
+                      "https://www.instagram.com/iantapia.me/",
                       <FaInstagram key="instagram-icon" />,
                     ],
                   ].map(([nombre, url, icono]) => (

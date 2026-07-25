@@ -65,7 +65,7 @@ const proyectos = [
     title: "Blog Personal — ianconia.xyz",
     desc: "Plataforma editorial fullstack con newsletter, panel admin privado y experiencia de lectura estilo NYT. Dominio propio, deploy en Vercel.",
     url: "/proyectos/blog-personal",
-    image: null,
+    image: "/proyectos/ianconia.jpg",
     category: "Fullstack",
     number: "04",
     previewLabel: "IANCONIA",
@@ -74,7 +74,7 @@ const proyectos = [
     title: "GiChat",
     desc: "Landing page con chatbot de intent detection construido desde cero en JS puro — sin APIs ni frameworks. Detección ponderada por keywords, widget DOM dinámico y acciones contextuales.",
     url: "/proyectos/gi-chat",
-    image: null,
+    image: "/proyectos/gichat.png",
     category: "JavaScript · NLP",
     number: "05",
     previewLabel: "GiChat",
@@ -688,13 +688,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <a
+        <div className="mt-10 text-center">
+          <Link
             href="/proyectos"
-            className="inline-block border border-black px-8 py-3 font-semibold hover:bg-black hover:text-white transition"
+            className="group inline-flex items-center gap-3 rounded-full border border-[#365b40]/30 bg-white/45 px-5 py-2.5 text-sm font-bold text-[#365b40] shadow-[0_8px_24px_rgba(35,67,43,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#365b40] hover:bg-[#365b40] hover:text-white hover:shadow-[0_12px_28px_rgba(35,67,43,0.18)]"
           >
-            Ver más proyectos
-          </a>
+            <span>Ver más proyectos</span>
+            <span className="text-base transition duration-300 group-hover:translate-x-1">
+              ↗
+            </span>
+          </Link>
         </div>
       </section>
 

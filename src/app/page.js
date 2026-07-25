@@ -324,7 +324,7 @@ export default function Home() {
                 <span className="transition group-hover:translate-x-1">→</span>
               </a>
               <a
-                href="/proyectos/cv-iantapia.pdf"
+                href="/proyectos/cv-iantapia (4).pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-black/25 bg-white/25 px-6 py-3.5 text-sm font-bold backdrop-blur-sm transition hover:border-black hover:bg-white/60"

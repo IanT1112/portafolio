@@ -3,156 +3,290 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const appUrl =
+  "https://studio--trujillo-responde-2-7719-1bf4c.us-central1.hosted.app/";
+
+const stack = [
+  {
+    categoria: "Backend serverless",
+    items: [
+      "Firebase sobre Google Cloud",
+      "Base de datos y despliegue administrado",
+    ],
+  },
+  {
+    categoria: "Geolocalización",
+    items: [
+      "Google Maps Platform",
+      "Maps API y Places API para ubicación y visualización",
+    ],
+  },
+  {
+    categoria: "Inteligencia Artificial",
+    items: [
+      "Google Cloud AI APIs",
+      "Análisis y clasificación inteligente de reportes",
+    ],
+  },
+];
+
+const funcionalidades = [
+  {
+    grupo: "Reporte ciudadano",
+    items: [
+      "Registro de incidencias urbanas desde una interfaz accesible",
+      "Ingreso de información relevante para la atención municipal",
+      "Experiencia enfocada en reducir la fricción del reporte",
+    ],
+  },
+  {
+    grupo: "Ubicación",
+    items: [
+      "Geolocalización de cada incidencia reportada",
+      "Visualización de ubicaciones mediante Google Maps",
+      "Uso de servicios geoespaciales para contextualizar el reporte",
+    ],
+  },
+  {
+    grupo: "Clasificación con IA",
+    items: [
+      "Procesamiento automático de la información enviada",
+      "Análisis y clasificación mediante servicios de IA de Google",
+      "Organización inteligente para facilitar la gestión municipal",
+    ],
+  },
+];
+
+const resultados = [
+  "Aplicación de tecnología a un problema urbano de impacto social",
+  "Integración de servicios cloud, IA y APIs geoespaciales",
+  "Arquitectura serverless preparada para crecer",
+  "Experiencia digital centrada en la participación ciudadana",
+];
+
 export default function TrujilloResponde() {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   return (
-    <main 
-      className="min-h-screen px-6 md:px-16 py-4 text-black"
-      style={{
-        background: 'linear-gradient(135deg, #ffffff 0%, #E3EED4 30%, #AEC3B0 60%, #6B9071 100%)'
-      }}
-    >
-      {/* Navegación */}
-      <div className="flex gap-3 mb-6 text-sm">
-        <Link
-          href="/"
-          className="px-5 py-2.5 bg-white/40 backdrop-blur-sm border border-gray-400/50 rounded-lg hover:bg-white/60 hover:border-gray-500 hover:shadow-md transition-all duration-200 font-medium"
-        >
-          ← Inicio
-        </Link>
+    <main className="relative min-h-screen overflow-hidden bg-[#e5efdc] px-6 py-8 text-black md:px-12 md:py-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_7%_4%,rgba(255,255,255,0.95),transparent_28%),radial-gradient(circle_at_96%_15%,rgba(107,144,113,0.42),transparent_34%),linear-gradient(145deg,#f4f7ef_0%,#dce9d2_50%,#a9c1a7_100%)]"
+      />
 
-        <Link
-          href="/proyectos"
-          className="px-5 py-2.5 bg-white/40 backdrop-blur-sm border border-gray-400/50 rounded-lg hover:bg-white/60 hover:border-gray-500 hover:shadow-md transition-all duration-200 font-medium"
-        >
-          ← Proyectos
-        </Link>
-      </div>
-
-      {/* Título */}
-      <h1 className="text-3xl font-bold mb-6">
-        Trujillo Responde
-      </h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Iframe interactivo */}
-        <div className="flex flex-col gap-4">
-          <div className="relative w-full aspect-[14/10] border-4 border-white/30 rounded-2xl overflow-hidden shadow-2xl bg-white">
-            <iframe
-              src="https://studio--trujillo-responde-2-7719-1bf4c.us-central1.hosted.app/"
-              className="w-full h-full"
-              title="Trujillo Responde - Aplicación interactiva"
-              allow="geolocation; clipboard-write"
-            />
-          </div>
-
-          <div className="flex gap-4">
-            <button
-              onClick={() => setIsFullscreen(true)}
-              className="flex items-center justify-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg hover:bg-white hover:shadow-lg transition font-medium"
-              title="Ver en pantalla completa"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-              </svg>
-              <span className="hidden sm:inline">Pantalla completa</span>
-            </button>
-
-            <a
-              href="https://studio--trujillo-responde-2-7719-1bf4c.us-central1.hosted.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg hover:bg-white hover:shadow-lg transition font-medium"
-              title="Abrir en nueva pestaña"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-              <span className="hidden sm:inline">Nueva pestaña</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Contenido */}
-        <div className="flex items-start">
-          <div
-            className="
-              bg-white/20
-              backdrop-blur-md
-              border border-white/30
-              shadow-xl
-              rounded-2xl
-              p-6 md:p-10
-              max-w-3xl
-              text-sm
-              leading-relaxed
-            "
+      <div className="relative mx-auto max-w-6xl">
+        <nav className="mb-12 md:mb-16">
+          <Link
+            href="/proyectos"
+            className="inline-flex items-center gap-2 rounded-full border border-[#365b40]/25 bg-white/45 px-4 py-2 text-sm font-semibold text-[#294b33] backdrop-blur-sm transition hover:border-[#365b40]/50 hover:bg-white/70"
           >
-            <div className="space-y-4">
-              <p>
-                Trujillo Responde es una plataforma web que permite a los ciudadanos reportar incidencias urbanas de forma geolocalizada, mejorando la eficiencia en la gestión municipal.
-              </p>
+            <span aria-hidden="true">←</span>
+            Proyectos
+          </Link>
+        </nav>
 
-              <p>
-                Los reportes son procesados mediante servicios de Inteligencia Artificial de Google, integrados a través de APIs, para analizar y clasificar automáticamente la información enviada por los usuarios. La solución combina servicios cloud y APIs geoespaciales, aplicados a un problema real de impacto social.
-              </p>
+        <header className="mb-16">
+          <div className="mb-8 max-w-4xl">
+            <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#365b40]">
+              <span className="h-px w-8 bg-[#365b40]" />
+              GovTech · Inteligencia Artificial
+            </span>
+            <h1 className="mt-5 text-5xl font-black leading-[1.04] tracking-tight md:text-7xl">
+              Trujillo Responde
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-7 text-black/65 md:text-lg md:leading-8">
+              Plataforma web que permite a los ciudadanos reportar incidencias
+              urbanas de forma geolocalizada, mejorando la eficiencia en la gestión
+              municipal mediante servicios cloud e inteligencia artificial.
+            </p>
+          </div>
 
-              <div className="pt-4 border-t border-gray-300/50">
-                <h3 className="font-semibold mb-3 text-base">Tecnologías utilizadas:</h3>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M3.89 15.672L6.255.461A.542.542 0 017.27.288l2.543 4.771zm16.794 3.692l-2.25-14.528a.54.54 0 00-.919-.295L3.316 17.84zm-7.32 2.636l-5.134-9.638 6.394-3.618 4.524 8.521zM14.27 7.5l-2.476-4.646 2.476-2.354L17.5 7.5z"/>
-                    </svg>
-                    <span>Firebase (Google Cloud) – Backend serverless, base de datos y despliegue</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-1.48 0-2.85.43-4.01 1.17l1.46 1.46C10.21 6.23 11.08 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3 0 1.13-.64 2.11-1.56 2.62l1.45 1.45C23.16 18.16 24 16.68 24 15c0-2.64-2.05-4.78-4.65-4.96zM3 5.27l2.75 2.74C2.56 8.15 0 10.77 0 14c0 3.31 2.69 6 6 6h11.73l2 2L21 20.73 4.27 4 3 5.27zM7.73 10l8 8H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h1.73z"/>
-                    </svg>
-                    <span>Google Maps Platform (Maps & Places API) – Geolocalización y visualización</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 3c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm0 2c2.761 0 5 2.239 5 5s-2.239 5-5 5-5-2.239-5-5 2.239-5 5-5z"/>
-                    </svg>
-                    <span>Google Cloud AI APIs – Análisis y clasificación inteligente de reportes</span>
-                  </div>
-                </div>
-              </div>
+          <a
+            href={appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 rounded-full bg-[#365b40] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(35,67,43,0.2)] transition hover:-translate-y-0.5 hover:bg-[#294b33]"
+          >
+            Abrir aplicación <span aria-hidden="true">↗</span>
+          </a>
+        </header>
+
+        <section className="mx-auto mb-24 max-w-5xl" aria-label="Demostración interactiva">
+          <div className="rounded-[2rem] border border-white/60 bg-white/35 p-2 shadow-[0_24px_70px_rgba(35,67,43,0.18)] backdrop-blur-md md:p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-white">
+              <iframe
+                src={appUrl}
+                className="h-full w-full"
+                title="Trujillo Responde - Aplicación interactiva"
+                allow="geolocation; clipboard-write"
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10" />
             </div>
           </div>
-        </div>
+
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setIsFullscreen(true)}
+              className="inline-flex items-center gap-2 rounded-full border border-[#365b40]/30 bg-white/50 px-5 py-2.5 text-sm font-bold text-[#294b33] backdrop-blur-sm transition hover:bg-white/80"
+            >
+              <span aria-hidden="true">⛶</span>
+              Pantalla completa
+            </button>
+            <a
+              href={appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[#365b40]/30 bg-white/50 px-5 py-2.5 text-sm font-bold text-[#294b33] backdrop-blur-sm transition hover:bg-white/80"
+            >
+              Nueva pestaña <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
+        <section className="mb-24">
+          <div className="mb-10 grid gap-4 md:grid-cols-[1fr_420px] md:items-end">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#365b40]">
+                Tecnologías
+              </span>
+              <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+                Stack técnico
+              </h2>
+            </div>
+            <p className="text-sm leading-6 text-black/60">
+              La solución conecta infraestructura serverless, servicios de
+              geolocalización e inteligencia artificial de Google.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {stack.map((bloque, index) => (
+              <article
+                key={bloque.categoria}
+                className="rounded-[1.5rem] border border-[#365b40]/15 bg-white/50 p-6 shadow-[0_12px_35px_rgba(35,67,43,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/65"
+              >
+                <div className="mb-5 flex items-center justify-between">
+                  <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-[#365b40]">
+                    {bloque.categoria}
+                  </h3>
+                  <span className="text-xs font-bold text-[#365b40]/35">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <ul className="space-y-3">
+                  {bloque.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-sm leading-6 text-black/70"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6b9071]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-24">
+          <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#365b40]">
+            Alcance
+          </span>
+          <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+            Funcionalidades
+          </h2>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {funcionalidades.map((bloque, index) => (
+              <article
+                key={bloque.grupo}
+                className="rounded-[1.5rem] border border-[#365b40]/15 bg-white/50 p-6 shadow-[0_12px_35px_rgba(35,67,43,0.08)] backdrop-blur-sm"
+              >
+                <span className="mb-8 grid h-10 w-10 place-items-center rounded-full bg-[#365b40] text-xs font-black text-white">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mb-5 text-xl font-black tracking-tight">
+                  {bloque.grupo}
+                </h3>
+                <ul className="space-y-4">
+                  {bloque.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-sm leading-6 text-black/65"
+                    >
+                      <span className="mt-1 grid h-4 w-4 shrink-0 place-items-center rounded-full border border-[#6b9071]/50 text-[9px] font-bold text-[#365b40]">
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-20 overflow-hidden rounded-[2rem] bg-[#294b33] px-6 py-8 text-white shadow-[0_20px_55px_rgba(35,67,43,0.22)] md:px-10 md:py-10">
+          <div className="grid gap-8 md:grid-cols-[300px_1fr]">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#bcd5b5]">
+                Impacto
+              </span>
+              <h2 className="mt-3 text-3xl font-black tracking-tight">
+                Lo que demuestra
+              </h2>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {resultados.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/15 bg-white/8 p-5 text-sm leading-6 text-white/80"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <footer className="border-t border-[#365b40]/20 py-8 text-center">
+          <Link
+            href="/proyectos"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#294b33] transition hover:gap-3"
+          >
+            <span aria-hidden="true">←</span>
+            Volver a todos los proyectos
+          </Link>
+        </footer>
       </div>
 
-      {/* Modal Fullscreen */}
       {isFullscreen && (
-        <div className="fixed inset-0 bg-black z-50 flex flex-col">
-          {/* Barra superior */}
-          <div className="bg-gray-900 text-white p-4 flex justify-between items-center">
-            <h3 className="text-lg font-semibold">Trujillo Responde</h3>
+        <div
+          className="fixed inset-0 z-50 flex flex-col bg-[#101510]"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Trujillo Responde en pantalla completa"
+        >
+          <div className="flex items-center justify-between border-b border-white/10 bg-[#1d2d22] px-5 py-3 text-white">
+            <h3 className="font-bold">Trujillo Responde</h3>
             <button
+              type="button"
               onClick={() => setIsFullscreen(false)}
-              className="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition flex items-center gap-2"
+              className="rounded-full border border-white/20 px-4 py-2 text-sm font-bold transition hover:bg-white hover:text-black"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-              Cerrar
+              Cerrar ×
             </button>
           </div>
-          
-          {/* Iframe fullscreen */}
           <iframe
-            src="https://studio--trujillo-responde-2-7719-1bf4c.us-central1.hosted.app/"
+            src={appUrl}
             className="w-full flex-1"
-            title="Trujillo Responde Fullscreen"
+            title="Trujillo Responde en pantalla completa"
             allow="geolocation; clipboard-write"
           />
         </div>
       )}
-
     </main>
   );
 }

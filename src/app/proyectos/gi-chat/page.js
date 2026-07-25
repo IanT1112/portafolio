@@ -1,18 +1,31 @@
-"use client";
+import Image from "next/image";
 import Link from "next/link";
 
 const stack = [
   {
     categoria: "Frontend",
-    items: ["HTML5 semántico", "CSS3 puro (variables, keyframes, glassmorphism)", "JavaScript vanilla", "Grid layout responsive + media queries"],
+    items: [
+      "HTML5 semántico",
+      "CSS3 puro (variables, keyframes, glassmorphism)",
+      "JavaScript vanilla",
+      "Grid layout responsive + media queries",
+    ],
   },
   {
     categoria: "Tipografía",
-    items: ["Google Fonts", "Cormorant Garamond (display / títulos)", "Jost (cuerpo de texto)"],
+    items: [
+      "Google Fonts",
+      "Cormorant Garamond (display / títulos)",
+      "Jost (cuerpo de texto)",
+    ],
   },
   {
     categoria: "Formulario",
-    items: ["Formspree (backend de envíos)", "Sin servidor propio", "Sin dependencias adicionales"],
+    items: [
+      "Formspree (backend de envíos)",
+      "Sin servidor propio",
+      "Sin dependencias adicionales",
+    ],
   },
   {
     categoria: "Deploy",
@@ -63,101 +76,176 @@ const demuestra = [
 
 export default function GiChat() {
   return (
-    <main
-      className="min-h-screen text-black px-6 md:px-16 py-8"
-      style={{
-        background: "linear-gradient(135deg, #ffffff 0%, #e8e0f0 30%, #c4b5d4 60%, #8b6fa8 100%)",
-      }}
-    >
-      {/* NAV */}
-      <div className="mb-8">
-        <Link
-          href="/proyectos"
-          className="px-5 py-2.5 bg-white/40 backdrop-blur-sm border border-gray-400/50 rounded-lg hover:bg-white/60 hover:border-gray-500 hover:shadow-md transition-all duration-200 font-medium text-sm"
+    <main className="relative min-h-screen overflow-hidden bg-[#e5efdc] px-6 py-8 text-black md:px-12 md:py-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_7%_4%,rgba(255,255,255,0.95),transparent_28%),radial-gradient(circle_at_96%_15%,rgba(107,144,113,0.42),transparent_34%),linear-gradient(145deg,#f4f7ef_0%,#dce9d2_50%,#a9c1a7_100%)]"
+      />
+
+      <div className="relative mx-auto max-w-6xl">
+        <nav className="mb-12 md:mb-16">
+          <Link
+            href="/proyectos"
+            className="inline-flex items-center gap-2 rounded-full border border-[#365b40]/25 bg-white/45 px-4 py-2 text-sm font-semibold text-[#294b33] backdrop-blur-sm transition hover:border-[#365b40]/50 hover:bg-white/70"
+          >
+            <span aria-hidden="true">←</span>
+            Proyectos
+          </Link>
+        </nav>
+
+        <header className="mb-16">
+          <div className="mb-8 max-w-4xl">
+            <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#365b40]">
+              <span className="h-px w-8 bg-[#365b40]" />
+              JavaScript · Procesamiento de lenguaje
+            </span>
+            <h1 className="mt-5 text-5xl font-black leading-[1.04] tracking-tight md:text-7xl">
+              GiChat
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-7 text-black/65 md:text-lg md:leading-8">
+              Landing page con chatbot de detección de intenciones construido
+              completamente desde cero en JavaScript puro, sin APIs externas ni
+              modelos de lenguaje. Utiliza coincidencias de palabras clave
+              ponderadas para interpretar cada mensaje.
+            </p>
+          </div>
+
+          <a
+            href="https://gichat-weld.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 rounded-full bg-[#365b40] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(35,67,43,0.2)] transition hover:-translate-y-0.5 hover:bg-[#294b33]"
+          >
+            Visitar GiChat <span aria-hidden="true">↗</span>
+          </a>
+        </header>
+
+        <section
+          className="mx-auto mb-24 max-w-5xl"
+          aria-label="Vista previa de GiChat"
         >
-          ← Proyectos
-        </Link>
-      </div>
-
-      {/* HEADER */}
-      <div className="max-w-3xl mx-auto mb-16">
-        <p className="text-xs uppercase tracking-widest text-[#6b4fa0] font-bold mb-3">Proyecto personal</p>
-        <h1 className="text-4xl md:text-5xl font-black mb-6">GiChat</h1>
-        <p className="text-base md:text-lg leading-relaxed text-black/80 mb-8">
-          Landing page con chatbot de intent detection construido completamente desde cero en
-          JavaScript puro — sin APIs externas, sin modelos de lenguaje. Implementa un sistema
-          de detección de intención basado en coincidencia de palabras clave ponderadas.
-        </p>
-        <a
-          href="https://gichat-weld.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block border border-black px-8 py-3 font-semibold text-sm hover:bg-black hover:text-white transition"
-        >
-          Ver sitio en vivo → gichat-weld.vercel.app
-        </a>
-      </div>
-
-      {/* STACK TÉCNICO */}
-      <div className="max-w-3xl mx-auto mb-16">
-        <h2 className="text-2xl font-black mb-8 border-b border-black/20 pb-3">Stack técnico</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {stack.map((bloque) => (
-            <div key={bloque.categoria} className="border border-black/20 p-6 bg-white/30 backdrop-blur-sm">
-              <h3 className="text-xs uppercase tracking-widest font-bold text-[#6b4fa0] mb-4">
-                {bloque.categoria}
-              </h3>
-              <ul className="flex flex-col gap-2">
-                {bloque.items.map((item) => (
-                  <li key={item} className="text-sm flex items-start gap-2">
-                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#8b6fa8] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          <div className="rounded-[2rem] border border-white/60 bg-white/35 p-2 shadow-[0_24px_70px_rgba(35,67,43,0.18)] backdrop-blur-md md:p-3">
+            <div className="relative overflow-hidden rounded-[1.5rem] bg-[#dfe9da]">
+              <Image
+                src="/proyectos/gichat.png"
+                alt="Vista previa de la landing page y chatbot GiChat"
+                width={1897}
+                height={896}
+                priority
+                sizes="(max-width: 768px) 100vw, 1024px"
+                className="h-auto w-full"
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10" />
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </section>
 
-      {/* CÓMO FUNCIONA EL CHATBOT */}
-      <div className="max-w-3xl mx-auto mb-16">
-        <h2 className="text-2xl font-black mb-8 border-b border-black/20 pb-3">
-          Cómo funciona el chatbot
-        </h2>
-        <div className="flex flex-col gap-4">
-          {flujo.map((paso) => (
-            <div key={paso.num} className="border border-black/20 p-6 bg-white/30 backdrop-blur-sm flex gap-5">
-              <span className="text-2xl font-black text-[#8b6fa8] shrink-0">{paso.num}</span>
-              <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest mb-1">{paso.titulo}</h3>
-                <p className="text-sm leading-relaxed text-black/70">{paso.desc}</p>
-              </div>
+        <section className="mb-24">
+          <div className="mb-10 grid gap-4 md:grid-cols-[1fr_420px] md:items-end">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#365b40]">
+                Tecnologías
+              </span>
+              <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+                Stack técnico
+              </h2>
             </div>
-          ))}
-        </div>
-      </div>
+            <p className="text-sm leading-6 text-black/60">
+              Una implementación ligera construida con tecnologías web nativas,
+              sin frameworks ni dependencias innecesarias.
+            </p>
+          </div>
 
-      {/* LO QUE DEMUESTRA */}
-      <div className="max-w-3xl mx-auto mb-20">
-        <h2 className="text-2xl font-black mb-8 border-b border-black/20 pb-3">Lo que demuestra</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {demuestra.map((item) => (
-            <div key={item} className="border border-black/20 p-5 bg-white/30 backdrop-blur-sm text-sm leading-relaxed">
-              {item}
+          <div className="grid gap-5 sm:grid-cols-2">
+            {stack.map((bloque, index) => (
+              <article
+                key={bloque.categoria}
+                className="rounded-[1.5rem] border border-[#365b40]/15 bg-white/50 p-6 shadow-[0_12px_35px_rgba(35,67,43,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/65"
+              >
+                <div className="mb-5 flex items-center justify-between">
+                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#365b40]">
+                    {bloque.categoria}
+                  </h3>
+                  <span className="text-xs font-bold text-[#365b40]/55">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <ul className="space-y-3">
+                  {bloque.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-sm leading-6 text-black/70"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6b9071]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-24">
+          <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#365b40]">
+            Flujo de procesamiento
+          </span>
+          <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+            Cómo funciona el chatbot
+          </h2>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {flujo.map((paso) => (
+              <article
+                key={paso.num}
+                className="rounded-[1.5rem] border border-[#365b40]/15 bg-white/50 p-6 shadow-[0_12px_35px_rgba(35,67,43,0.08)] backdrop-blur-sm"
+              >
+                <div className="mb-5 flex items-center gap-4">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#365b40] text-xs font-black text-white">
+                    {paso.num}
+                  </span>
+                  <h3 className="text-lg font-black tracking-tight">
+                    {paso.titulo}
+                  </h3>
+                </div>
+                <p className="text-sm leading-6 text-black/65">{paso.desc}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-20 overflow-hidden rounded-[2rem] bg-[#294b33] px-6 py-8 text-white shadow-[0_20px_55px_rgba(35,67,43,0.22)] md:px-10 md:py-10">
+          <div className="grid gap-8 md:grid-cols-[300px_1fr]">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#bcd5b5]">
+                Resultado
+              </span>
+              <h2 className="mt-3 text-3xl font-black tracking-tight">
+                Lo que demuestra
+              </h2>
             </div>
-          ))}
-        </div>
-      </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {demuestra.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/15 bg-white/8 p-5 text-sm leading-6 text-white/80"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      {/* FOOTER NAV */}
-      <div className="max-w-3xl mx-auto text-center">
-        <Link
-          href="/proyectos"
-          className="inline-block border border-black px-8 py-3 font-semibold text-sm hover:bg-black hover:text-white transition"
-        >
-          ← Volver a proyectos
-        </Link>
+        <footer className="border-t border-[#365b40]/20 py-8 text-center">
+          <Link
+            href="/proyectos"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#294b33] transition hover:gap-3"
+          >
+            <span aria-hidden="true">←</span>
+            Volver a todos los proyectos
+          </Link>
+        </footer>
       </div>
     </main>
   );

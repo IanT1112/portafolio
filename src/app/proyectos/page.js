@@ -42,6 +42,14 @@ const proyectos = [
     image: "/proyectos/gichat.png",
     category: "JavaScript · NLP",
   },
+  {
+    title: "FundMind",
+    description:
+      "Plataforma fullstack con Machine Learning para evaluar startups, analizar riesgos y proyectar retornos.",
+    href: "/proyectos/fundmind",
+    image: "/proyectos/fundmind.png",
+    category: "Fullstack · IA",
+  },
 ];
 
 export default function Proyectos() {

@@ -79,6 +79,14 @@ const proyectos = [
     number: "05",
     previewLabel: "GiChat",
   },
+  {
+    title: "FundMind",
+    desc: "Plataforma fullstack con Inteligencia Artificial para evaluar startups, estimar su probabilidad de éxito, analizar riesgos y proyectar retornos financieros.",
+    url: "/proyectos/fundmind",
+    image: "/proyectos/fundmind.png",
+    category: "Fullstack · IA",
+    number: "06",
+  },
 ];
 
 const imagenesSobreMi = [

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const appUrl = "https://fundmind.vercel.app/";
+const appUrl = "https://proyecto-ia-blue.vercel.app/";
 
 const stack = [
   {

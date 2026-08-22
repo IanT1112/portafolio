@@ -11,6 +11,10 @@ const stack = [
     items: ["Supabase (PostgreSQL + RLS)", "Supabase Storage", "Supabase Edge Functions", "Supabase Auth (JWT)"],
   },
   {
+    categoria: "Datos & automatización",
+    items: ["Pipeline ETL con TypeScript", "RSS multifuente", "Supabase Cron", "Clasificación y scoring automático"],
+  },
+  {
     categoria: "Email",
     items: ["Resend API", "DKIM, SPF y DMARC"],
   },
@@ -62,9 +66,22 @@ const funcionalidades = [
       "Auto-deploy en cada git push",
     ],
   },
+  {
+    grupo: "Pipeline de noticias",
+    items: [
+      "Ingesta automatizada de feeds RSS de tecnología, economía, negocios y actualidad",
+      "Limpieza, normalización, validación y filtrado por relevancia",
+      "Clasificación automática en siete categorías y score de importancia",
+      "Deduplicación por URL y eliminación programada de noticias antiguas",
+      "Ejecución serverless cada 12 horas con Supabase Edge Functions y Cron",
+      "Briefing conectado a React, balanceado por categoría y adaptable a desktop y móvil",
+    ],
+  },
 ];
 
 const aprendizajes = [
+  "Diseño de un pipeline ETL serverless de extremo a extremo",
+  "Automatización y resolución de autenticación en producción",
   "Arquitectura fullstack sin framework backend tradicional",
   "Integración de múltiples servicios en la nube",
   "Diseño UI/UX de nivel editorial sin librerías de componentes",
@@ -131,6 +148,51 @@ export default function BlogPersonal() {
                 className="h-auto w-full"
               />
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10" />
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-24 overflow-hidden rounded-[2rem] border border-[#365b40]/15 bg-white/55 p-6 shadow-[0_18px_50px_rgba(35,67,43,0.1)] backdrop-blur-sm md:p-10">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.4fr] lg:items-center">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#365b40]">
+                Ingeniería de datos
+              </span>
+              <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+                Noticias relevantes, sin trabajo manual
+              </h2>
+              <p className="mt-5 text-sm leading-7 text-black/65 md:text-base">
+                Construí un pipeline ETL serverless que convierte múltiples feeds RSS
+                en un briefing editorial reciente, priorizado y listo para consumir en
+                IANCONIA. El flujo se ejecuta automáticamente cada 12 horas.
+              </p>
+            </div>
+
+            <div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {[
+                  ["7", "categorías automáticas"],
+                  ["12 h", "entre ejecuciones"],
+                  ["URL", "deduplicación automática"],
+                ].map(([valor, etiqueta]) => (
+                  <div key={etiqueta} className="rounded-2xl bg-[#294b33] p-5 text-white">
+                    <p className="text-3xl font-black tracking-tight">{valor}</p>
+                    <p className="mt-2 text-xs leading-5 text-white/65">{etiqueta}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 flex flex-wrap items-center gap-2 text-xs font-bold text-[#294b33]">
+                {["RSS", "Extracción", "Limpieza", "Clasificación", "Scoring", "Supabase", "React"].map(
+                  (etapa, index, etapas) => (
+                    <div key={etapa} className="flex items-center gap-2">
+                      <span className="rounded-full border border-[#365b40]/20 bg-white/70 px-3 py-2">
+                        {etapa}
+                      </span>
+                      {index < etapas.length - 1 && <span aria-hidden="true">→</span>}
+                    </div>
+                  )
+                )}
+              </div>
             </div>
           </div>
         </section>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const stack = [
@@ -135,19 +134,32 @@ export default function BlogPersonal() {
           </a>
         </header>
 
-        <section className="mx-auto mb-24 max-w-5xl" aria-label="Vista previa del proyecto">
+        <section className="mx-auto mb-24 max-w-5xl" aria-label="Vista en vivo del proyecto">
           <div className="rounded-[2rem] border border-white/60 bg-white/35 p-2 shadow-[0_24px_70px_rgba(35,67,43,0.18)] backdrop-blur-md md:p-3">
-            <div className="relative overflow-hidden rounded-[1.5rem] bg-[#dfe9da]">
-              <Image
-                src="/proyectos/ianconia.jpg"
-                alt="Vista previa de la plataforma editorial ianconia.xyz"
-                width={1896}
-                height={932}
-                priority
-                sizes="(max-width: 768px) 100vw, 1024px"
-                className="h-auto w-full"
+            <div className="overflow-hidden rounded-[1.5rem] bg-[#dfe9da] ring-1 ring-inset ring-black/10">
+              <div className="flex items-center gap-3 border-b border-black/10 bg-white/80 px-4 py-3 backdrop-blur-md">
+                <div className="hidden gap-1.5 sm:flex" aria-hidden="true">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+                </div>
+                <a
+                  href="https://www.ianconia.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="min-w-0 flex-1 truncate rounded-full border border-black/10 bg-white/70 px-4 py-2 text-center text-xs font-semibold text-black/55 transition hover:bg-white hover:text-[#294b33]"
+                  aria-label="Abrir ianconia.xyz en una pestaña nueva"
+                >
+                  https://www.ianconia.xyz
+                </a>
+                <span className="text-sm text-[#365b40]" aria-hidden="true">↗</span>
+              </div>
+              <iframe
+                src="https://www.ianconia.xyz"
+                title="Vista en vivo de IANCONIA"
+                loading="lazy"
+                className="h-[520px] w-full border-0 md:h-[640px]"
               />
-              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10" />
             </div>
           </div>
         </section>

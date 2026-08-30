@@ -50,6 +50,14 @@ const proyectos = [
     image: "/proyectos/fundmind.png",
     category: "Fullstack · IA",
   },
+  {
+    title: "ParkCar",
+    description:
+      "Gestión inteligente de estacionamientos con reconocimiento de placas, control de estancias y cálculo automático de tarifas.",
+    href: "/proyectos/ParkCar",
+    image: "/proyectos/ParkCar.png",
+    category: "Fullstack · Visión IA",
+  },
 ];
 
 export default function Proyectos() {

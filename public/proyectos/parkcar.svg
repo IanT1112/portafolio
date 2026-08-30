@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Vista previa de ParkCar</title>
+  <desc id="desc">Panel de gestión inteligente de estacionamientos y reconocimiento de matrículas</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a12"/>
+      <stop offset="0.55" stop-color="#123b29"/>
+      <stop offset="1" stop-color="#347356"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="15%" r="65%">
+      <stop offset="0" stop-color="#79e4ae" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#79e4ae" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#020a06" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <g opacity=".08" stroke="#bfffd9">
+    <path d="M0 150h1600M0 300h1600M0 450h1600M0 600h1600M0 750h1600M0 900h1600"/>
+    <path d="M150 0v1000M300 0v1000M450 0v1000M600 0v1000M750 0v1000M900 0v1000M1050 0v1000M1200 0v1000M1350 0v1000M1500 0v1000"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="150" y="125" width="1300" height="750" rx="46" fill="#f5faf7"/>
+    <rect x="150" y="125" width="1300" height="96" rx="46" fill="#112c20"/>
+    <rect x="150" y="185" width="1300" height="36" fill="#112c20"/>
+    <circle cx="210" cy="173" r="10" fill="#ff7169"/>
+    <circle cx="244" cy="173" r="10" fill="#ffd166"/>
+    <circle cx="278" cy="173" r="10" fill="#72d89b"/>
+    <text x="330" y="184" fill="#d7eee0" font-family="Arial, sans-serif" font-size="26" font-weight="700">ParkCar</text>
+    <rect x="190" y="261" width="280" height="574" rx="25" fill="#183d2c"/>
+    <text x="230" y="322" fill="#fff" font-family="Arial, sans-serif" font-size="31" font-weight="800">PARKCAR</text>
+    <text x="230" y="350" fill="#9bc8ae" font-family="Arial, sans-serif" font-size="15" letter-spacing="3">SMART PARKING</text>
+    <g fill="#cce4d5" font-family="Arial, sans-serif" font-size="19">
+      <text x="230" y="435">Panel general</text><text x="230" y="492">Vehículos activos</text>
+      <text x="230" y="549">Registrar ingreso</text><text x="230" y="606">Historial</text>
+      <text x="230" y="663">Pagos y tarifas</text><text x="230" y="720">Configuración</text>
+    </g>
+    <rect x="510" y="261" width="900" height="170" rx="25" fill="#e4efe8"/>
+    <text x="552" y="310" fill="#52675a" font-family="Arial, sans-serif" font-size="17" font-weight="700">VEHÍCULOS EN EL ESTACIONAMIENTO</text>
+    <text x="552" y="386" fill="#153b2a" font-family="Arial, sans-serif" font-size="62" font-weight="900">24</text>
+    <rect x="1180" y="296" width="180" height="90" rx="20" fill="#235d43"/>
+    <text x="1270" y="332" text-anchor="middle" fill="#a8dabb" font-family="Arial, sans-serif" font-size="14" font-weight="700">OCUPACIÓN</text>
+    <text x="1270" y="368" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="30" font-weight="900">68%</text>
+    <rect x="510" y="465" width="570" height="370" rx="25" fill="#fff" stroke="#d7e5dc" stroke-width="3"/>
+    <text x="552" y="516" fill="#1c3d2c" font-family="Arial, sans-serif" font-size="21" font-weight="800">Últimos ingresos</text>
+    <g font-family="Arial, sans-serif">
+      <g transform="translate(552 550)"><rect width="486" height="68" rx="14" fill="#eef5f0"/><text x="22" y="29" fill="#687b70" font-size="13">PLACA DETECTADA</text><text x="22" y="53" fill="#173a29" font-size="22" font-weight="800">T4P-284</text><text x="355" y="42" fill="#27764e" font-size="16" font-weight="700">09:42</text></g>
+      <g transform="translate(552 632)"><rect width="486" height="68" rx="14" fill="#eef5f0"/><text x="22" y="29" fill="#687b70" font-size="13">PLACA DETECTADA</text><text x="22" y="53" fill="#173a29" font-size="22" font-weight="800">B8K-913</text><text x="355" y="42" fill="#27764e" font-size="16" font-weight="700">09:37</text></g>
+      <g transform="translate(552 714)"><rect width="486" height="68" rx="14" fill="#eef5f0"/><text x="22" y="29" fill="#687b70" font-size="13">PLACA DETECTADA</text><text x="22" y="53" fill="#173a29" font-size="22" font-weight="800">M2C-675</text><text x="355" y="42" fill="#27764e" font-size="16" font-weight="700">09:25</text></g>
+    </g>
+    <rect x="1115" y="465" width="295" height="370" rx="25" fill="#112f22"/>
+    <text x="1262" y="520" text-anchor="middle" fill="#a9d7ba" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">RECONOCIMIENTO IA</text>
+    <path d="M1180 670l42-83h82l42 83-18 61h-130z" fill="#4f9e70"/>
+    <rect x="1196" y="679" width="134" height="48" rx="8" fill="#dfeae3"/>
+    <text x="1263" y="711" text-anchor="middle" fill="#183526" font-family="Arial, sans-serif" font-size="20" font-weight="900">T4P-284</text>
+    <circle cx="1213" cy="735" r="17" fill="#07150e"/><circle cx="1313" cy="735" r="17" fill="#07150e"/>
+    <rect x="1166" y="770" width="193" height="34" rx="17" fill="#70d49a"/>
+    <text x="1262" y="793" text-anchor="middle" fill="#123323" font-family="Arial, sans-serif" font-size="14" font-weight="800">PLACA CONFIRMADA</text>
+  </g>
+</svg>

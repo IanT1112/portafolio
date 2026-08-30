@@ -87,6 +87,14 @@ const proyectos = [
     category: "Fullstack · IA",
     number: "06",
   },
+  {
+    title: "ParkCar",
+    desc: "Sistema web inteligente para gestionar estacionamientos mediante reconocimiento de placas, visión por computadora y control automático de estancias, tarifas y pagos.",
+    url: "/proyectos/ParkCar",
+    image: "/proyectos/ParkCar.png",
+    category: "Fullstack · Visión IA",
+    number: "07",
+  },
 ];
 
 const imagenesSobreMi = [

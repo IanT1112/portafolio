@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+
+const githubUrl = "https://github.com/IanT1112/blog-personal";
 
 const stack = [
   {
@@ -124,14 +127,25 @@ export default function BlogPersonal() {
             </p>
           </div>
 
-          <a
-            href="https://www.ianconia.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 rounded-full bg-[#365b40] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(35,67,43,0.2)] transition hover:-translate-y-0.5 hover:bg-[#294b33]"
-          >
-            Visitar ianconia.xyz <span aria-hidden="true">↗</span>
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://www.ianconia.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full bg-[#365b40] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(35,67,43,0.2)] transition hover:-translate-y-0.5 hover:bg-[#294b33]"
+            >
+              Visitar ianconia.xyz <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full border border-[#365b40]/30 bg-white/50 px-6 py-3 text-sm font-bold text-[#294b33] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/80"
+              aria-label="Ir al repositorio de IANCONIA en GitHub"
+            >
+              <FaGithub className="text-lg" aria-hidden="true" /> Ir a GitHub
+            </a>
+          </div>
         </header>
 
         <section className="mx-auto mb-24 max-w-5xl" aria-label="Vista en vivo del proyecto">

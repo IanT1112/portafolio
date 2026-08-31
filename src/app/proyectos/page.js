@@ -60,6 +60,8 @@ const proyectos = [
   },
 ];
 
+const proyectosDescendentes = [...proyectos].reverse();
+
 export default function Proyectos() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#e5efdc] px-6 py-8 text-black md:px-12 md:py-10">
@@ -98,7 +100,7 @@ export default function Proyectos() {
           className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3"
           aria-label="Listado de proyectos"
         >
-          {proyectos.map((proyecto, index) => (
+          {proyectosDescendentes.map((proyecto, index) => (
             <Link
               key={proyecto.href}
               href={proyecto.href}

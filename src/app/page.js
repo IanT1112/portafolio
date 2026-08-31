@@ -97,6 +97,8 @@ const proyectos = [
   },
 ];
 
+const proyectosDescendentes = [...proyectos].reverse();
+
 const imagenesSobreMi = [
   {
     src: "/proyectos/iaaan.jpg",
@@ -608,7 +610,7 @@ export default function Home() {
             className="project-carousel -mx-1 flex gap-6 overflow-x-hidden px-1 py-3"
             aria-label="Carrusel de proyectos"
           >
-            {proyectos.map((proyecto) => (
+            {proyectosDescendentes.map((proyecto) => (
               <Link
                 data-project-card
                 key={proyecto.url}

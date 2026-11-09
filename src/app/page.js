@@ -95,6 +95,14 @@ const proyectos = [
     category: "Fullstack · Visión IA",
     number: "07",
   },
+  {
+    title: "Identificador inteligente de etiquetas",
+    desc: "Prototipo de visión artificial que convierte fotografías de etiquetas de calzado en información comercial estructurada.",
+    url: "/proyectos/identificador-etiquetas",
+    image: "/proyectos/identificador-etiquetas-portada.jpg",
+    category: "Computer Vision · OCR",
+    number: "08",
+  },
 ];
 
 const proyectosDescendentes = [...proyectos].reverse();
@@ -221,7 +229,7 @@ export default function Home() {
   useEffect(() => {
     const intervalo = setInterval(() => {
       setProyectoActivo((actual) => (actual >= limiteCarrusel ? 0 : actual + 1));
-    }, 5500);
+    }, 8000);
 
     return () => clearInterval(intervalo);
   }, [limiteCarrusel]);

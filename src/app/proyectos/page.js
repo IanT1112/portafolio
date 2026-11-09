@@ -58,6 +58,14 @@ const proyectos = [
     image: "/proyectos/ParkCar.png",
     category: "Fullstack · Visión IA",
   },
+  {
+    title: "Identificador inteligente de etiquetas",
+    description:
+      "Prototipo de visión artificial que extrae marca, modelo, código, barras y talla desde una fotografía de una etiqueta de calzado.",
+    href: "/proyectos/identificador-etiquetas",
+    image: "/proyectos/identificador-etiquetas-portada.jpg",
+    category: "Computer Vision · OCR",
+  },
 ];
 
 const proyectosDescendentes = [...proyectos].reverse();

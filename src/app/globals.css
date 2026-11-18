@@ -176,19 +176,21 @@ section[id] {
 }
 
 /* ───────── Fotos de Sobre mí ───────── */
+/* Inclinación estática por foto (--giro, en el propio elemento) */
 .about-photo {
+  transform: rotate(var(--giro, 0deg));
   transition: transform 200ms var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .about-photo:hover {
-    transform: translateY(-3px) rotate(-0.6deg);
+    transform: translateY(-3px) rotate(0deg) scale(1.02);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .about-photo:hover {
-    transform: none;
+    transform: rotate(var(--giro, 0deg));
   }
 }
 

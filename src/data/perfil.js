@@ -23,38 +23,57 @@ export const sobreMi = {
     ["Inteligencia", "IA & datos"],
     ["Comunidad", "Hackathons y voluntariado"],
   ],
-  // Se reparten en dos columnas escalonadas: posiciones pares a la izquierda,
-  // impares a la derecha. Todas se recortan a 3:4; `enfoque` elige qué parte
-  // de la foto se conserva (object-position). Para sumar o cambiar fotos,
-  // guárdalas en public/proyectos y edita aquí.
+  // Collage de 3 columnas desfasadas (a la izquierda del texto).
+  // Cada marco respeta la forma real de la foto (ancho × alto en píxeles),
+  // sin recortes. `columna` (1–3) decide dónde va; `giro` es una inclinación
+  // leve en grados para el efecto "desordenado". Alterna verticales y
+  // horizontales dentro de cada columna para que el collage no quede alto.
+  // Para sumar una foto: guárdala en public/proyectos y agrega aquí sus medidas.
   fotos: [
     {
       src: "/proyectos/sobre-mi-1.jpg",
+      ancho: 800,
+      alto: 1421,
+      columna: 1,
+      giro: -2,
       alt: "Ian Tapia en el evento Techspira",
       pie: "Techspira",
     },
     {
-      src: "/proyectos/iaaan.jpg",
-      alt: "Ian Tapia, estudiante de Ingeniería de Sistemas e Inteligencia Artificial",
-      pie: "Ingeniería de Sistemas e IA",
-    },
-    {
-      src: "/proyectos/sobre-mi-ml-laboratory.jpg",
-      alt: "Anuncio de bienvenida a los nuevos miembros de la comunidad ML Laboratory, con la videollamada del grupo",
-      pie: "ML Laboratory",
-      enfoque: "50% 60%",
+      src: "/proyectos/sobre-mi-pucp.jpg",
+      ancho: 1080,
+      alto: 939,
+      columna: 1,
+      giro: 1.5,
+      alt: "Ian Tapia con miembros de IEEE CS PUCP frente a las letras de la PUCP",
+      pie: "IEEE CS PUCP",
     },
     {
       src: "/proyectos/sobre-mi-comunidad.jpg",
+      ancho: 1280,
+      alto: 960,
+      columna: 2,
+      giro: 2,
       alt: "Foto grupal de la comunidad START Perú haciendo un gesto de triángulo con las manos",
       pie: "START Perú",
-      enfoque: "45% 50%",
     },
     {
-      src: "/proyectos/sobre-mi-pucp.jpg",
-      alt: "Ian Tapia con miembros de IEEE CS PUCP frente a las letras de la PUCP",
-      pie: "IEEE CS PUCP",
-      enfoque: "45% 60%",
+      src: "/proyectos/sobre-mi-ml-laboratory.jpg",
+      ancho: 738,
+      alto: 1016,
+      columna: 2,
+      giro: -1.5,
+      alt: "Anuncio de bienvenida a los nuevos miembros de la comunidad ML Laboratory, con la videollamada del grupo",
+      pie: "ML Laboratory",
+    },
+    {
+      src: "/proyectos/iaaan.jpg",
+      ancho: 585,
+      alto: 1024,
+      columna: 3,
+      giro: 2.5,
+      alt: "Ian Tapia, estudiante de Ingeniería de Sistemas e Inteligencia Artificial",
+      pie: "Ingeniería de Sistemas e IA",
     },
   ],
 };

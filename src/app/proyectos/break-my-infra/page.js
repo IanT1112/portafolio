@@ -240,15 +240,15 @@ export default function BreakMyInfra() {
 
       <CaseSection
         eyebrow="Arquitectura"
-        titulo="De la visita al dashboard"
+        titulo="Diagrama AWS"
         descripcion="CloudFront + ACM es el punto de entrada permanente con HTTPS; Lambda enciende la instancia EC2, donde nginx reparte el tráfico entre los servicios y Grafana. OpenTelemetry alimenta métricas, logs y trazas."
       >
         <div className="reveal-item">
           <CaseFigure
-            src="/proyectos/break-my-infra-arquitectura.png"
-            alt="Diagrama de arquitectura: CloudFront y ACM, Lambda de encendido y EC2 con diez contenedores; aplicación con gateway, orders, payments y Redis; observabilidad con Prometheus, Loki y Tempo hacia Grafana"
-            width={1163}
-            height={710}
+            src="/proyectos/break-my-infra-diagrama-aws.jpg"
+            alt="Diagrama AWS en us-east-1: el visitante entra por CloudFront, Lambda enciende una EC2 t4g.small en la VPC por defecto con Docker Compose (nginx, gateway, orders, payments, Redis, Grafana Alloy, Loki, Tempo, Prometheus y Grafana); Parameter Store, CloudWatch Logs, Certificate Manager, IAM, Systems Manager y Terraform"
+            width={1902}
+            height={902}
             className="!mt-0 max-w-none"
           />
         </div>

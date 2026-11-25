@@ -10,10 +10,26 @@ export const rubros = [
   { id: "publico", nombre: "Sector público", icono: "publico" },
   { id: "medios", nombre: "Medios digitales", icono: "medios" },
   { id: "atencion", nombre: "Atención al cliente", icono: "atencion" },
+  { id: "infra", nombre: "Infraestructura cloud", icono: "infra" },
 ];
 
 // Ordenados del más reciente al más antiguo.
 export const proyectos = [
+  {
+    slug: "break-my-infra",
+    numero: "09",
+    titulo: "Break My Infra",
+    rubro: "infra",
+    impacto:
+      "Rompe un sistema en producción y observa cómo lo detecta y se recupera solo, en tiempo real.",
+    stack: ["AWS", "Terraform", "Docker", "Prometheus", "Grafana"],
+    rol: "Individual · DevOps + Observabilidad",
+    imagen: "/proyectos/break-my-infra-dashboard.png",
+    alt: "Panel de Break My Infra con los escenarios de caos y el dashboard de Grafana en vivo",
+    detalle: "/proyectos/break-my-infra",
+    demo: "https://infra.iantapia.xyz",
+    repo: "https://github.com/IanT1112/break-my-infra",
+  },
   {
     slug: "identificador-etiquetas",
     numero: "08",

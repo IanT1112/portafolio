@@ -4,6 +4,7 @@ import {
   LuLandmark,
   LuMessageCircle,
   LuNewspaper,
+  LuServer,
   LuShoppingBag,
   LuTrendingUp,
 } from "react-icons/lu";
@@ -16,6 +17,7 @@ const ICONOS = {
   publico: LuLandmark,
   medios: LuNewspaper,
   atencion: LuMessageCircle,
+  infra: LuServer,
 };
 
 export default function RubroIcon({ icono, className = "h-5 w-5" }) {
